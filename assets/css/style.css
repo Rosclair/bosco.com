@@ -1,0 +1,62 @@
+/* ================================================
+   BOSCO CONSTRUCTION GROUP — Feuille de styles
+   Styles personnalisés partagés par toutes les pages.
+   Tailwind gère les utilitaires ; ce fichier contient
+   uniquement ce que Tailwind ne peut pas faire seul.
+   ================================================ */
+
+
+/* ------------------------------------------------
+   Material Symbols (icônes Google)
+   ------------------------------------------------ */
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+}
+
+
+/* ------------------------------------------------
+   Animation scroll-reveal
+   Les éléments .reveal apparaissent en fondu+glissé
+   quand ils entrent dans le viewport (voir main.js).
+   ------------------------------------------------ */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ------------------------------------------------
+   Dégradés de marque
+   ------------------------------------------------ */
+
+/* Overlay sombre sur les images hero */
+.gradient-overlay {
+    background: linear-gradient(
+        135deg,
+        rgba(42, 42, 42, 0.9) 0%,
+        rgba(42, 42, 42, 0.4) 100%
+    );
+}
+
+/* Dégradé vert signature (CTA, badges) */
+.signature-gradient {
+    background: linear-gradient(135deg, #ADCE1E 0%, #1F8438 100%);
+}
+
+
+/* ------------------------------------------------
+   Effet hover sur les cartes (section "Pourquoi nous")
+   ------------------------------------------------ */
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(42, 42, 42, 0.1);
+}

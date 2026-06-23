@@ -1,0 +1,511 @@
+﻿<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+
+    <!-- META -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contactez Bosco Construction Group – Devis gratuit, WhatsApp, téléphone ou e-mail. Notre équipe répond sous 48h depuis Douala, Cameroun." />
+    <title>Contactez-nous | Bosco Construction Group</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content="https://bosco-group.cm/contact.html" />
+    <meta property="og:title"       content="Contactez-nous | Bosco Construction Group" />
+    <meta property="og:description" content="Demandez un devis gratuit sous 48h. Contactez-nous par WhatsApp, téléphone ou e-mail depuis Douala, Cameroun." />
+    <meta property="og:image"       content="https://bosco-group.cm/assets/img/hero-pages.jpeg" />
+    <meta property="og:locale"      content="fr_CM" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content="Contactez-nous | Bosco Construction Group" />
+    <meta name="twitter:description" content="Demandez un devis gratuit sous 48h. Contactez-nous par WhatsApp, téléphone ou e-mail depuis Douala, Cameroun." />
+    <meta name="twitter:image"       content="https://bosco-group.cm/assets/img/hero-pages.jpeg" />
+
+    <!-- POLICES GOOGLE (import unique) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
+
+    <!-- TAILWIND CSS (build local, purgé + minifié) — npm run build:css -->
+    <link rel="stylesheet" href="assets/css/tailwind.css" />
+
+    <!-- STYLES PERSONNALISÉS (partagés par toutes les pages) -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Styles spécifiques page Contact : focus des champs de formulaire (WCAG 2.4.7) -->
+    <style>
+        /* Indicateur de focus accessible : outline vert + halo — WCAG 2.4.7 */
+        input:focus, select:focus, textarea:focus {
+            outline: 2px solid #1F8438;
+            outline-offset: 2px;
+            border-color: #1F8438 !important;
+            box-shadow: 0 0 0 4px rgba(31, 132, 56, 0.18) !important;
+        }
+
+        /* Pour les utilisateurs souris sur navigateurs modernes :
+           conserve uniquement la bordure verte, masque le ring */
+        input:focus:not(:focus-visible),
+        select:focus:not(:focus-visible),
+        textarea:focus:not(:focus-visible) {
+            outline: none;
+            box-shadow: none !important;
+        }
+    </style>
+
+</head>
+<body class="bg-surface font-body-md text-anthracite selection:bg-vert-energie selection:text-anthracite">
+
+
+    <!-- ============================================
+         NAVIGATION PRINCIPALE
+         Identique à toutes les pages.
+         Lien actif : Contact
+         ============================================ -->
+    <nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-border-gray h-20 flex items-center">
+        <div class="max-w-[1280px] mx-auto w-full flex justify-between items-center px-margin-mobile md:px-margin-desktop">
+
+            <!-- Logo textuel -->
+            <a href="index.html" class="flex items-center">
+                <img src="assets/img/logo.jpeg" alt="Bosco Construction Group" class="h-12 w-auto" />
+            </a>
+
+            <!-- Liens desktop (cachés sous lg) -->
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="index.html"        class="text-on-surface-variant hover:text-primary transition-colors text-[14px] uppercase tracking-wider">Accueil</a>
+                <a href="services.html"     class="text-on-surface-variant hover:text-primary transition-colors text-[14px] uppercase tracking-wider">Services</a>
+                <a href="realisations.html" class="text-on-surface-variant hover:text-primary transition-colors text-[14px] uppercase tracking-wider">Réalisations</a>
+                <a href="blog.html"         class="text-on-surface-variant hover:text-primary transition-colors text-[14px] uppercase tracking-wider">Blog</a>
+                <a href="a-propos.html"     class="text-on-surface-variant hover:text-primary transition-colors text-[14px] uppercase tracking-wider">À propos</a>
+                <a href="contact.html"      class="text-vert-croissance font-bold border-b-2 border-vert-energie pb-1 text-[14px] uppercase tracking-wider" aria-current="page">Contact</a>
+            </div>
+
+            <!-- Bouton devis (desktop) -->
+            <a href="contact.html" class="hidden md:block bg-vert-energie hover:bg-vert-croissance text-anthracite hover:text-white px-6 py-3 font-semibold rounded-lg transition-all active:scale-95">
+                Demander un devis
+            </a>
+
+            <!-- Bouton hamburger (mobile) -->
+            <button id="mobile-menu-btn" class="lg:hidden p-2 text-primary" aria-label="Ouvrir le menu">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+
+        </div>
+    </nav>
+
+
+    <!-- ============================================
+         MENU MOBILE (overlay plein écran)
+         Lien Contact mis en évidence (vert-energie)
+         ============================================ -->
+    <div id="mobile-menu" class="fixed inset-0 bg-primary z-[60] flex-col items-center justify-center gap-8 hidden">
+        <button id="close-menu" class="absolute top-6 right-6 text-white" aria-label="Fermer le menu">
+            <span class="material-symbols-outlined text-4xl">close</span>
+        </button>
+        <a href="index.html"        class="text-white text-2xl font-headline-md">Accueil</a>
+        <a href="services.html"     class="text-white text-2xl font-headline-md">Services</a>
+        <a href="realisations.html" class="text-white text-2xl font-headline-md">Réalisations</a>
+        <a href="blog.html"         class="text-white text-2xl font-headline-md">Blog</a>
+        <a href="a-propos.html"     class="text-white text-2xl font-headline-md">À propos</a>
+        <a href="contact.html"      class="text-vert-energie text-2xl font-headline-md font-bold border-b-2 border-vert-energie pb-1">Contact</a>
+        <a href="contact.html"      class="bg-vert-energie text-anthracite px-8 py-4 font-bold rounded-xl mt-4">
+            Demander un devis
+        </a>
+    </div>
+
+
+    <main class="pt-20">
+
+        <!-- ============================================
+             HERO
+             Image de fond + overlay, fil d'Ariane,
+             titre H1 et sous-titre.
+             ============================================ -->
+        <section class="relative h-[400px] flex items-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img
+                    src="assets/img/hero-pages.jpeg"
+                    alt="Chantier de construction à Douala – Bosco Construction Group"
+                    class="w-full h-full object-cover"
+                />
+                <div class="absolute inset-0 gradient-overlay"></div>
+            </div>
+            <div class="relative z-10 max-w-[1280px] mx-auto w-full px-margin-mobile md:px-margin-desktop text-white">
+                <!-- Fil d'Ariane -->
+                <div class="flex items-center gap-xs font-label-sm text-label-sm mb-md uppercase tracking-widest">
+                    <a href="index.html" class="text-vert-energie hover:underline">Accueil</a>
+                    <span class="material-symbols-outlined text-[14px] text-vert-energie">chevron_right</span>
+                    <span class="text-white/80">Contact</span>
+                </div>
+                <h1 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl mb-md">
+                    Contactez-nous
+                </h1>
+                <p class="font-body-lg text-body-lg text-white/80 max-w-2xl">
+                    Parlons de votre projet : étude, devis ou conseil technique, notre équipe vous répond sous 48h.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- ============================================
+             CARTES CONTACT RAPIDE
+             Flottent sur le hero (margin négative)
+             ============================================ -->
+        <section class="relative z-20 -mt-xl px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+
+                <!-- WhatsApp -->
+                <div class="bg-white p-lg rounded-xl shadow-sm border border-border-gray card-hover flex flex-col items-center text-center reveal">
+                    <div class="w-16 h-16 rounded-full bg-[#25D366]/10 flex items-center justify-center mb-md">
+                        <span class="material-symbols-outlined text-[#25D366] text-[32px]" style="font-variation-settings:'FILL' 1">chat</span>
+                    </div>
+                    <h3 class="font-headline-sm text-headline-sm mb-xs">WhatsApp</h3>
+                    <p class="text-text-muted font-body-sm text-body-sm mb-lg">Réponse rapide sur WhatsApp</p>
+                    <a href="https://wa.me/237652321897"
+                       class="w-full py-md bg-[#25D366] text-white font-label-md text-label-md rounded-lg flex items-center justify-center gap-sm hover:opacity-90 transition-opacity">
+                        Discuter maintenant
+                    </a>
+                </div>
+
+                <!-- Téléphone -->
+                <div class="bg-white p-lg rounded-xl shadow-sm border border-border-gray card-hover flex flex-col items-center text-center reveal" style="transition-delay:100ms">
+                    <div class="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mb-md">
+                        <span class="material-symbols-outlined text-secondary text-[32px]">call</span>
+                    </div>
+                    <h3 class="font-headline-sm text-headline-sm mb-xs">Téléphone</h3>
+                    <p class="text-text-muted font-body-sm text-body-sm mb-lg">Appelez-nous directement</p>
+                    <a href="tel:+237652321897"
+                       class="font-headline-md text-headline-md text-primary hover:text-secondary transition-colors">
+                        +237 652 321 897
+                    </a>
+                </div>
+
+                <!-- E-mail -->
+                <div class="bg-white p-lg rounded-xl shadow-sm border border-border-gray card-hover flex flex-col items-center text-center reveal" style="transition-delay:200ms">
+                    <div class="w-16 h-16 rounded-full bg-vert-energie/10 flex items-center justify-center mb-md">
+                        <span class="material-symbols-outlined text-vert-croissance text-[32px]">mail</span>
+                    </div>
+                    <h3 class="font-headline-sm text-headline-sm mb-xs">E-mail</h3>
+                    <p class="text-text-muted font-body-sm text-body-sm mb-lg">Écrivez-nous</p>
+                    <a href="mailto:contact@bosco-group.cm"
+                       class="font-headline-sm text-headline-sm text-primary hover:text-vert-croissance transition-colors break-all">
+                        contact@bosco-group.cm
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ============================================
+             FORMULAIRE + COORDONNÉES
+             7 colonnes pour le formulaire,
+             5 colonnes pour les coordonnées et la box confiance.
+             ============================================ -->
+        <section class="py-2xl px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+
+                <!-- Colonne formulaire -->
+                <div class="lg:col-span-7 reveal">
+                    <div class="bg-white p-xl rounded-xl border border-border-gray shadow-sm">
+                        <h2 class="font-headline-lg text-headline-lg mb-lg">Envoyez-nous un message</h2>
+                        <form id="contactForm" class="space-y-lg" novalidate>
+
+                            <!-- Champ caché Web3Forms – remplacer YOUR_ACCESS_KEY par votre clé sur web3forms.com -->
+                            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+                            <input type="hidden" name="subject" value="Nouveau devis – Bosco Construction Group" />
+                            <input type="hidden" name="from_name" value="Bosco Construction Website" />
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+                                <div class="space-y-xs">
+                                    <label for="nom" class="font-label-sm text-label-sm uppercase text-text-muted">Nom / Entreprise</label>
+                                    <input id="nom" name="nom" type="text" required placeholder="Ex : Jean Dupont"
+                                           class="w-full bg-surface border border-border-gray rounded-lg p-md font-body-md text-body-md" />
+                                </div>
+                                <div class="space-y-xs">
+                                    <label for="telephone" class="font-label-sm text-label-sm uppercase text-text-muted">Téléphone / WhatsApp</label>
+                                    <input id="telephone" name="telephone" type="tel" required placeholder="+237 ..."
+                                           class="w-full bg-surface border border-border-gray rounded-lg p-md font-body-md text-body-md" />
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+                                <div class="space-y-xs">
+                                    <label for="type-projet" class="font-label-sm text-label-sm uppercase text-text-muted">Type de projet</label>
+                                    <select id="type-projet" name="type-projet" class="w-full bg-surface border border-border-gray rounded-lg p-md font-body-md text-body-md appearance-none">
+                                        <option>Gros œuvre</option>
+                                        <option>Finition</option>
+                                        <option>Charpente</option>
+                                        <option>Menuiserie</option>
+                                        <option>Rénovation</option>
+                                        <option>Autre</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-xs">
+                                    <label for="localisation" class="font-label-sm text-label-sm uppercase text-text-muted">Localisation</label>
+                                    <input id="localisation" name="localisation" type="text" required placeholder="Ex : Douala, Bonapriso"
+                                           class="w-full bg-surface border border-border-gray rounded-lg p-md font-body-md text-body-md" />
+                                </div>
+                            </div>
+                            <div class="space-y-xs">
+                                <label for="message" class="font-label-sm text-label-sm uppercase text-text-muted">Message</label>
+                                <textarea id="message" name="message" rows="4" required placeholder="Décrivez votre projet en quelques mots..."
+                                          class="w-full bg-surface border border-border-gray rounded-lg p-md font-body-md text-body-md"></textarea>
+                            </div>
+
+                            <!-- Notification inline (WCAG – remplace l'alert()) -->
+                            <div id="form-notification" role="status" aria-live="polite" class="hidden rounded-lg py-md px-lg font-body-sm text-center"></div>
+
+                            <button type="submit" id="submitBtn"
+                                    class="w-full signature-gradient text-anthracite font-headline-sm text-headline-sm py-lg rounded-xl shadow-lg hover:shadow-vert-energie/20 hover:scale-[1.02] active:scale-95 transition-all duration-300">
+                                Envoyer ma demande
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Colonne coordonnées + confiance -->
+                <div class="lg:col-span-5 space-y-lg">
+
+                    <!-- Bloc coordonnées (fond sombre) -->
+                    <div class="bg-primary-container p-xl rounded-xl text-on-primary reveal" style="transition-delay:100ms">
+                        <h3 class="font-headline-md text-headline-md mb-lg text-vert-energie">Coordonnées</h3>
+                        <div class="space-y-lg">
+                            <div class="flex gap-md">
+                                <span class="material-symbols-outlined text-vert-energie flex-shrink-0">location_on</span>
+                                <div>
+                                    <p class="font-label-md text-label-md mb-xs">Adresse</p>
+                                    <p class="font-body-md text-body-md text-on-primary-container">Galerie de Flore, Rue Castelnau, Akwa, Douala</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-md">
+                                <span class="material-symbols-outlined text-vert-energie flex-shrink-0">schedule</span>
+                                <div>
+                                    <p class="font-label-md text-label-md mb-xs">Heures d'ouverture</p>
+                                    <p class="font-body-md text-body-md text-on-primary-container">Lun – Ven : 08h00 – 18h00<br/>Samedi : 09h00 – 13h00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-xl pt-xl border-t border-on-primary-container/20">
+                            <h4 class="font-label-sm text-label-sm uppercase text-on-primary-container mb-md">Contact direct</h4>
+                            <div class="space-y-md">
+                                <a href="tel:+237652321897"
+                                   class="flex items-center gap-sm text-on-primary hover:text-vert-energie transition-colors">
+                                    <span class="material-symbols-outlined text-sm">call</span>
+                                    <span>+237 652 321 897</span>
+                                </a>
+                                <a href="mailto:contact@bosco-group.cm"
+                                   class="flex items-center gap-sm text-on-primary hover:text-vert-energie transition-colors">
+                                    <span class="material-symbols-outlined text-sm">mail</span>
+                                    <span>contact@bosco-group.cm</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Box de confiance -->
+                    <div class="bg-surface p-xl rounded-xl border border-border-gray reveal" style="transition-delay:200ms">
+                        <div class="flex flex-col gap-lg">
+                            <div class="flex items-center gap-md">
+                                <div class="bg-vert-energie/20 p-sm rounded-full">
+                                    <span class="material-symbols-outlined text-vert-croissance">verified</span>
+                                </div>
+                                <span class="font-headline-sm text-headline-sm">Devis gratuit</span>
+                            </div>
+                            <div class="flex items-center gap-md">
+                                <div class="bg-vert-energie/20 p-sm rounded-full">
+                                    <span class="material-symbols-outlined text-vert-croissance">bolt</span>
+                                </div>
+                                <span class="font-headline-sm text-headline-sm">Réponse sous 48h</span>
+                            </div>
+                            <div class="flex items-center gap-md">
+                                <div class="bg-vert-energie/20 p-sm rounded-full">
+                                    <span class="material-symbols-outlined text-vert-croissance">distance</span>
+                                </div>
+                                <span class="font-headline-sm text-headline-sm">Intervention à Douala</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================
+             CARTE GOOGLE MAPS
+             Localisation Galerie de Flore, Akwa.
+             ============================================ -->
+        <section class="py-2xl bg-white border-t border-border-gray">
+            <div class="px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto">
+                <div class="text-center mb-xl reveal">
+                    <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-anthracite mb-md">
+                        Venez nous rencontrer
+                    </h2>
+                    <p class="font-body-lg text-body-lg text-text-muted max-w-3xl mx-auto">
+                        Vous êtes à proximité ? Passez à la <span class="text-anthracite font-bold">Galerie de Flore</span>, prenons un café et discutons de votre projet en face à face.
+                    </p>
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-lg border border-border-gray h-[450px] reveal">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.8837077651016!2d9.6912345!3d4.0432109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1061128ea330a65d%3A0xc682f6e72b07e781!2sRue%20Castelnau%2C%20Douala!5e0!3m2!1sen!2scm!4v1715800000000!5m2!1sen!2scm"
+                        width="100%" height="100%" style="border:0;"
+                        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="Localisation Bosco Construction Group – Galerie de Flore, Akwa, Douala">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================
+             CTA FINAL
+             Dégradé vert signature, même style que l'accueil.
+             ============================================ -->
+        <section class="py-2xl bg-surface">
+            <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="signature-gradient rounded-[40px] p-10 md:p-20 text-center text-white reveal">
+                    <h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl mb-6">
+                        Votre projet mérite une équipe d'experts.<br/>
+                        <span class="text-anthracite">Lançons-le ensemble.</span>
+                    </h2>
+                    <p class="font-body-lg text-body-lg mb-10 max-w-2xl mx-auto text-white/90">
+                        Transformons vos plans en réalité. Notre équipe est prête à vous accompagner pour bâtir des structures qui durent des générations.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="#contactForm"
+                           class="bg-anthracite text-white px-10 py-5 font-bold rounded-2xl hover:scale-105 transition-transform shadow-2xl">
+                            Remplir le formulaire
+                        </a>
+                        <a href="https://wa.me/237652321897"
+                           class="bg-[#25D366] text-white px-10 py-5 font-bold rounded-2xl hover:scale-105 transition-transform flex items-center justify-center gap-3 shadow-lg">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                                <use href="assets/img/icons.svg#icon-whatsapp"/>
+                            </svg>
+                            WhatsApp Direct
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ============================================
+         PIED DE PAGE
+         Copie exacte du footer de l'accueil.
+         ============================================ -->
+    <footer class="bg-primary text-on-primary pt-2xl pb-12 overflow-hidden">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-2xl">
+
+                <!-- Colonne 1 : marque (2 colonnes) -->
+                <div class="col-span-1 md:col-span-2">
+                    <span class="font-headline-lg text-vert-energie mb-6 block">Bosco Construction Group SARL</span>
+                    <p class="text-on-primary-container font-body-md max-w-sm mb-8">
+                        Building Structural Vitality. Experts en génie civil et construction durable au cœur du Cameroun depuis plus de 10 ans.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-vert-energie transition-colors">
+                            <span class="material-symbols-outlined text-white">face_nod</span>
+                        </a>
+                        <a href="#" aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-vert-energie transition-colors">
+                            <span class="material-symbols-outlined text-white">link</span>
+                        </a>
+                        <a href="mailto:contact@bosco-group.cm" aria-label="E-mail" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-vert-energie transition-colors">
+                            <span class="material-symbols-outlined text-white">alternate_email</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Colonne 2 : coordonnées -->
+                <div>
+                    <h4 class="font-bold uppercase tracking-widest text-sm text-vert-energie mb-6">Contact & Accès</h4>
+                    <ul class="space-y-4 text-on-primary-container text-body-sm">
+                        <li class="flex gap-3">
+                            <span class="material-symbols-outlined text-vert-energie flex-shrink-0">location_on</span>
+                            <span>Galerie de Flore, Akwa,<br/>BP 1254, Douala, Cameroun</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="material-symbols-outlined text-vert-energie flex-shrink-0">phone_iphone</span>
+                            <a href="tel:+237652321897" class="hover:text-vert-energie transition-colors">+237 652 321 897</a>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="material-symbols-outlined text-vert-energie flex-shrink-0">schedule</span>
+                            <span>Lun – Ven : 08h00 – 18h00<br/>Samedi : 09h00 – 13h00</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Colonne 3 : navigation -->
+                <div>
+                    <h4 class="font-bold uppercase tracking-widest text-sm text-vert-energie mb-6">Navigation</h4>
+                    <ul class="space-y-3 text-on-primary-container text-body-sm">
+                        <li><a href="services.html"     class="hover:text-white transition-colors">Gros Œuvre & Terrassement</a></li>
+                        <li><a href="services.html"     class="hover:text-white transition-colors">Charpente & Menuiserie</a></li>
+                        <li><a href="realisations.html" class="hover:text-white transition-colors">Portfolio de Réalisations</a></li>
+                        <li><a href="a-propos.html"     class="hover:text-white transition-colors">À propos</a></li>
+                        <li><a href="contact.html"      class="hover:text-white transition-colors">Demander un devis</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Séparateur + copyright -->
+            <div class="pt-8 border-t border-on-primary-container/20 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-on-primary-container">
+                <p>© 2026 Bosco Construction Group SARL. Building Structural Vitality.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-vert-energie transition-colors">Mentions légales</a>
+                    <a href="contact.html" class="hover:text-vert-energie transition-colors">Contact</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- ============================================
+         JAVASCRIPT
+         main.js : scroll reveal + navbar + menu mobile
+         Script inline : soumission formulaire contact
+         ============================================ -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const form   = this;
+            const btn    = document.getElementById('submitBtn');
+            const notif  = document.getElementById('form-notification');
+            const btnText = 'Envoyer ma demande';
+
+            btn.disabled = true;
+            btn.innerHTML = '<span class="material-symbols-outlined inline-block align-middle mr-2" style="animation:spin 1s linear infinite">refresh</span>Envoi en cours…';
+            notif.className = 'hidden';
+
+            try {
+                const res  = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: new FormData(form)
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    notif.className = 'rounded-lg py-md px-lg font-body-sm text-center bg-vert-energie/10 border border-vert-croissance text-vert-croissance';
+                    notif.textContent = '✓ Merci ! Votre message a bien été transmis. Nous vous recontacterons sous 48h.';
+                    form.reset();
+                } else {
+                    throw new Error(data.message || 'Erreur serveur');
+                }
+            } catch {
+                notif.className = 'rounded-lg py-md px-lg font-body-sm text-center bg-red-50 border border-red-300 text-red-700';
+                notif.textContent = 'Une erreur est survenue. Contactez-nous directement par téléphone ou WhatsApp.';
+            } finally {
+                btn.disabled = false;
+                btn.textContent = btnText;
+            }
+        });
+    </script>
+
+</body>
+</html>

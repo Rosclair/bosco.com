@@ -1,0 +1,697 @@
+﻿<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+
+    <!-- ============================================
+         META
+         ============================================ -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Bosco Construction Group SARL – Gros œuvre, charpente, menuiserie et finition à Douala, Cameroun. Découvrez l'ensemble de nos prestations." />
+    <title>Nos Services | Bosco Construction Group – Douala</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content="https://bosco-group.cm/services.html" />
+    <meta property="og:title"       content="Nos Services | Bosco Construction Group – Douala" />
+    <meta property="og:description" content="Gros œuvre, charpente, menuiserie et finition à Douala. Découvrez l'ensemble de nos prestations de construction." />
+    <meta property="og:image"       content="https://bosco-group.cm/assets/img/hero-pages.jpeg" />
+    <meta property="og:locale"      content="fr_CM" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content="Nos Services | Bosco Construction Group – Douala" />
+    <meta name="twitter:description" content="Gros œuvre, charpente, menuiserie et finition à Douala. Découvrez l'ensemble de nos prestations de construction." />
+    <meta name="twitter:image"       content="https://bosco-group.cm/assets/img/hero-pages.jpeg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/css/tailwind.css" />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+</head>
+<body class="bg-surface font-body-md text-anthracite selection:bg-vert-energie selection:text-anthracite">
+
+
+    <!-- ============================================
+         NAVIGATION — identique à l'accueil
+         "Services" en lien actif.
+         ============================================ -->
+    <nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-border-gray h-20 flex items-center">
+        <div class="max-w-[1280px] mx-auto w-full flex justify-between items-center px-margin-mobile md:px-margin-desktop">
+
+            <a href="index.html" class="flex items-center">
+                <img src="assets/img/logo.jpeg" alt="Bosco Construction Group" class="h-12 w-auto" />
+            </a>
+
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="index.html"        class="text-on-surface-variant hover:text-primary transition-colors text-[14px] uppercase tracking-wider">Accueil</a>
+                <a href="services.html"     class="text-vert-croissance font-bold border-b-2 border-vert-energie pb-1 text-[14px] uppercase tracking-wider" aria-current="page">Services</a>
+                <a href="realisations.html" class="text-on-surface-variant hover:text-primary transition-colors text-[14px] uppercase tracking-wider">Réalisations</a>
+                <a href="blog.html"         class="text-on-surface-variant hover:text-primary transition-colors text-[14px] uppercase tracking-wider">Blog</a>
+                <a href="a-propos.html"     class="text-on-surface-variant hover:text-primary transition-colors text-[14px] uppercase tracking-wider">À propos</a>
+                <a href="contact.html"      class="text-on-surface-variant hover:text-primary transition-colors text-[14px] uppercase tracking-wider">Contact</a>
+            </div>
+
+            <a href="contact.html" class="hidden md:block bg-vert-energie hover:bg-vert-croissance text-anthracite hover:text-white px-6 py-3 font-semibold rounded-lg transition-all active:scale-95">
+                Demander un devis
+            </a>
+
+            <button id="mobile-menu-btn" class="lg:hidden p-2 text-primary" aria-label="Ouvrir le menu">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+
+        </div>
+    </nav>
+
+
+    <!-- ============================================
+         MENU MOBILE
+         ============================================ -->
+    <div id="mobile-menu" class="fixed inset-0 bg-primary z-[60] flex-col items-center justify-center gap-8 hidden">
+        <button id="close-menu" class="absolute top-6 right-6 text-white" aria-label="Fermer le menu">
+            <span class="material-symbols-outlined text-4xl">close</span>
+        </button>
+        <a href="index.html"        class="text-white text-2xl font-headline-md">Accueil</a>
+        <a href="services.html"     class="text-vert-energie text-2xl font-headline-md font-bold">Services</a>
+        <a href="realisations.html" class="text-white text-2xl font-headline-md">Réalisations</a>
+        <a href="blog.html"         class="text-white text-2xl font-headline-md">Blog</a>
+        <a href="a-propos.html"     class="text-white text-2xl font-headline-md">À propos</a>
+        <a href="contact.html"      class="text-white text-2xl font-headline-md">Contact</a>
+        <a href="contact.html"      class="bg-vert-energie text-anthracite px-8 py-4 font-bold rounded-xl mt-4">
+            Demander un devis
+        </a>
+    </div>
+
+
+    <!-- ============================================
+         HERO COURT
+         Même traitement que l'accueil : image + overlay
+         ============================================ -->
+    <section class="relative flex items-center overflow-hidden pt-20 min-h-[400px] md:min-h-[500px]">
+
+        <div class="absolute inset-0 z-0">
+            <img
+                src="assets/img/hero-pages.jpeg"
+                alt="Services Bosco Construction Group – chantier à Douala"
+                class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 gradient-overlay"></div>
+        </div>
+
+        <div class="relative z-10 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop w-full text-white py-2xl">
+
+            <!-- Fil d'Ariane -->
+            <nav aria-label="Fil d'Ariane" class="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-vert-energie mb-6 reveal">
+                <a href="index.html" class="hover:text-white transition-colors">Accueil</a>
+                <span class="text-white/30">/</span>
+                <span class="text-white/80">Services</span>
+            </nav>
+
+            <h1 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl mb-6 reveal">
+                Nos <span class="text-vert-energie">services</span>
+            </h1>
+
+            <p class="font-body-lg text-body-lg max-w-2xl text-white/80 reveal">
+                Une maîtrise technique complète, des fondations aux finitions les plus raffinées.
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         CHIPS DE NAVIGATION INTERNE
+         Fond anthracite, sticky sous la navbar.
+         ============================================ -->
+    <div class="bg-anthracite border-b border-white/10 sticky top-[80px] z-40 py-md overflow-x-auto">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop flex gap-sm md:gap-md justify-start md:justify-center min-w-max md:min-w-0">
+            <a href="#gros-oeuvre"  class="px-md md:px-lg py-sm bg-white/10 border border-vert-energie/40 rounded-full font-label-md text-label-md text-white hover:bg-vert-energie hover:text-anthracite transition-all duration-300 whitespace-nowrap text-sm">Gros œuvre</a>
+            <a href="#architecture" class="px-md md:px-lg py-sm bg-white/10 border border-vert-energie/40 rounded-full font-label-md text-label-md text-white hover:bg-vert-energie hover:text-anthracite transition-all duration-300 whitespace-nowrap text-sm">Architecture</a>
+            <a href="#charpente"    class="px-md md:px-lg py-sm bg-white/10 border border-vert-energie/40 rounded-full font-label-md text-label-md text-white hover:bg-vert-energie hover:text-anthracite transition-all duration-300 whitespace-nowrap text-sm">Charpente</a>
+            <a href="#menuiserie"   class="px-md md:px-lg py-sm bg-white/10 border border-vert-energie/40 rounded-full font-label-md text-label-md text-white hover:bg-vert-energie hover:text-anthracite transition-all duration-300 whitespace-nowrap text-sm">Menuiserie</a>
+            <a href="#finition"     class="px-md md:px-lg py-sm bg-white/10 border border-vert-energie/40 rounded-full font-label-md text-label-md text-white hover:bg-vert-energie hover:text-anthracite transition-all duration-300 whitespace-nowrap text-sm">Finition</a>
+        </div>
+    </div>
+
+
+    <!-- ============================================
+         INTRO — CHIFFRES CLÉS
+         Même bandeau que l'accueil.
+         ============================================ -->
+    <div class="bg-anthracite text-white py-12">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-white/10 text-center">
+                <div class="py-4 md:py-0 reveal">
+                    <span class="block font-headline-lg text-vert-energie mb-1">5 métiers</span>
+                    <span class="font-body-sm uppercase tracking-widest text-white/60">Sous un même toit</span>
+                </div>
+                <div class="py-4 md:py-0 reveal" style="transition-delay:100ms">
+                    <span class="block font-headline-lg text-vert-energie mb-1">Clé en main</span>
+                    <span class="font-body-sm uppercase tracking-widest text-white/60">De l'étude à la réception</span>
+                </div>
+                <div class="py-4 md:py-0 reveal" style="transition-delay:200ms">
+                    <span class="block font-headline-lg text-vert-energie mb-1">Garantie décennale</span>
+                    <span class="font-body-sm uppercase tracking-widest text-white/60">Engagements sur la durée</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ============================================
+         SECTION GROS ŒUVRE
+         Fond surface clair (impair)
+         ============================================ -->
+    <section id="gros-oeuvre" class="py-2xl bg-surface">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-2xl items-center">
+
+            <div class="reveal">
+                <!-- Numéro de service -->
+                <span class="inline-block font-bold text-4xl text-vert-energie/20 font-headline-xl mb-2">01</span>
+                <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-anthracite mb-3">
+                    Gros œuvre &amp; terrassement
+                </h2>
+                <p class="text-vert-croissance font-bold italic mb-6">"La base de toute structure durable."</p>
+
+                <div class="space-y-6 mb-8">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-vert-energie/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                            <span class="material-symbols-outlined text-vert-croissance">foundation</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-anthracite mb-1">Prestations</h4>
+                            <p class="text-on-surface-variant font-body-md">Fondations spéciales, terrassement de masse, dalles béton armé haute résistance.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-vert-energie/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                            <span class="material-symbols-outlined text-vert-croissance">security</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-anthracite mb-1">Pourquoi nous</h4>
+                            <p class="text-on-surface-variant font-body-md">Garantie de fondations solides adaptées aux sols complexes du Cameroun.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-vert-energie/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                            <span class="material-symbols-outlined text-vert-croissance">warning</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-anthracite mb-1">Le défi maîtrisé</h4>
+                            <p class="text-on-surface-variant font-body-md">Maîtrise de la planification climatique lors des saisons de pluies à Douala.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="inline-flex items-center gap-2 bg-vert-energie hover:bg-vert-croissance text-anthracite hover:text-white px-6 py-3 font-semibold rounded-lg transition-all group">
+                    Demander un devis
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </a>
+            </div>
+
+            <div class="rounded-2xl overflow-hidden shadow-lg reveal" style="transition-delay:150ms">
+                <img
+                    src="assets/img/service-gros-oeuvre-detail.jpeg"
+                    alt="Chantier de gros œuvre et terrassement – Bosco Construction Douala"
+                    class="w-full h-full object-cover aspect-[4/3]"
+                />
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         SECTION ARCHITECTURE & CALCUL
+         Fond blanc (pair)
+         ============================================ -->
+    <section id="architecture" class="py-2xl bg-white">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-2xl items-center">
+
+            <div class="order-2 md:order-1 rounded-2xl overflow-hidden shadow-lg reveal">
+                <img
+                    src="assets/img/service-architecture.jpeg"
+                    alt="Dessin architectural et calcul de structure – Bosco Construction Douala"
+                    class="w-full h-full object-cover aspect-[4/3]"
+                />
+            </div>
+
+            <div class="order-1 md:order-2 reveal" style="transition-delay:150ms">
+                <span class="inline-block font-bold text-4xl text-vert-energie/20 font-headline-xl mb-2">02</span>
+                <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-anthracite mb-3">
+                    Dessin architectural &amp; calcul
+                </h2>
+                <p class="text-vert-croissance font-bold italic mb-6">"L'ingénierie au service de l'esthétique."</p>
+
+                <div class="space-y-6 mb-8">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-vert-energie/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                            <span class="material-symbols-outlined text-vert-croissance">architecture</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-anthracite mb-1">Prestations</h4>
+                            <p class="text-on-surface-variant font-body-md">Conception de plans 2D/3D, notes de calcul de structure, optimisation budgétaire.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-vert-energie/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                            <span class="material-symbols-outlined text-vert-croissance">trending_up</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-anthracite mb-1">Pourquoi nous</h4>
+                            <p class="text-on-surface-variant font-body-md">Optimisation intelligente des matériaux pour réduire les coûts sans sacrifier la sécurité.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-vert-energie/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                            <span class="material-symbols-outlined text-vert-croissance">timer</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-anthracite mb-1">Le défi maîtrisé</h4>
+                            <p class="text-on-surface-variant font-body-md">Arbitrage permanent entre temps de conception et évitement d'erreurs coûteuses sur chantier.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="inline-flex items-center gap-2 bg-vert-energie hover:bg-vert-croissance text-anthracite hover:text-white px-6 py-3 font-semibold rounded-lg transition-all group">
+                    Demander un devis
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         SECTION CHARPENTE
+         Fond surface clair (impair)
+         ============================================ -->
+    <section id="charpente" class="py-2xl bg-surface">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-2xl items-center">
+
+            <div class="reveal">
+                <span class="inline-block font-bold text-4xl text-vert-energie/20 font-headline-xl mb-2">03</span>
+                <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-anthracite mb-3">
+                    Charpente bois &amp; métal
+                </h2>
+                <p class="text-vert-croissance font-bold italic mb-6">"La toiture, couronne de l'édifice."</p>
+
+                <div class="space-y-6 mb-8">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-vert-energie/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                            <span class="material-symbols-outlined text-vert-croissance">roofing</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-anthracite mb-1">Prestations</h4>
+                            <p class="text-on-surface-variant font-body-md">Conception et pose de structures à grande portée, charpentes industrielles et résidentielles.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-vert-energie/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                            <span class="material-symbols-outlined text-vert-croissance">verified</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-anthracite mb-1">Pourquoi nous</h4>
+                            <p class="text-on-surface-variant font-body-md">Équilibre parfait entre résistance structurelle et élégance esthétique.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-vert-energie/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                            <span class="material-symbols-outlined text-vert-croissance">bug_report</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-anthracite mb-1">Le défi maîtrisé</h4>
+                            <p class="text-on-surface-variant font-body-md">Application rigoureuse des traitements anticorrosion et anti-termites en milieu tropical.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="inline-flex items-center gap-2 bg-vert-energie hover:bg-vert-croissance text-anthracite hover:text-white px-6 py-3 font-semibold rounded-lg transition-all group">
+                    Demander un devis
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </a>
+            </div>
+
+            <div class="rounded-2xl overflow-hidden shadow-lg reveal" style="transition-delay:150ms">
+                <img
+                    src="assets/img/service-charpente-detail.jpeg"
+                    alt="Charpente bois et métal – structure de toiture Bosco Construction Douala"
+                    class="w-full h-full object-cover aspect-[4/3]"
+                />
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         SECTION MENUISERIE
+         Fond blanc (pair)
+         ============================================ -->
+    <section id="menuiserie" class="py-2xl bg-white">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-2xl items-center">
+
+            <div class="order-2 md:order-1 rounded-2xl overflow-hidden shadow-lg reveal">
+                <img
+                    src="assets/img/service-menuiserie-detail.jpeg"
+                    alt="Menuiserie aluminium sur mesure – Bosco Construction Douala"
+                    class="w-full h-full object-cover aspect-[4/3]"
+                />
+            </div>
+
+            <div class="order-1 md:order-2 reveal" style="transition-delay:150ms">
+                <span class="inline-block font-bold text-4xl text-vert-energie/20 font-headline-xl mb-2">04</span>
+                <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-anthracite mb-3">
+                    Menuiserie générale
+                </h2>
+                <p class="text-vert-croissance font-bold italic mb-6">"La touche de finition et de précision."</p>
+
+                <div class="space-y-6 mb-8">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-vert-energie/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                            <span class="material-symbols-outlined text-vert-croissance">door_sliding</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-anthracite mb-1">Prestations</h4>
+                            <p class="text-on-surface-variant font-body-md">Menuiserie aluminium et bois, installation de baies vitrées, placards sur mesure.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-vert-energie/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                            <span class="material-symbols-outlined text-vert-croissance">diamond</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-anthracite mb-1">Pourquoi nous</h4>
+                            <p class="text-on-surface-variant font-body-md">Valorisation immédiate de votre bien par des finitions d'exception.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-vert-energie/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                            <span class="material-symbols-outlined text-vert-croissance">straighten</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-anthracite mb-1">Le défi maîtrisé</h4>
+                            <p class="text-on-surface-variant font-body-md">Gestion de la précision millimétrique face à la complexité des designs modernes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="inline-flex items-center gap-2 bg-vert-energie hover:bg-vert-croissance text-anthracite hover:text-white px-6 py-3 font-semibold rounded-lg transition-all group">
+                    Demander un devis
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         SECTION FINITION
+         Fond surface clair (impair)
+         ============================================ -->
+    <section id="finition" class="py-2xl bg-surface">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-2xl items-center">
+
+            <div class="reveal">
+                <span class="inline-block font-bold text-4xl text-vert-energie/20 font-headline-xl mb-2">05</span>
+                <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-anthracite mb-3">
+                    Finition &amp; réfection
+                </h2>
+                <p class="text-vert-croissance font-bold italic mb-6">"Donner une seconde vie à votre patrimoine."</p>
+
+                <div class="space-y-6 mb-8">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-vert-energie/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                            <span class="material-symbols-outlined text-vert-croissance">format_paint</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-anthracite mb-1">Prestations</h4>
+                            <p class="text-on-surface-variant font-body-md">Revêtements de sols, peinture décorative, réhabilitation complète de bâtiments.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-vert-energie/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                            <span class="material-symbols-outlined text-vert-croissance">key</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-anthracite mb-1">Pourquoi nous</h4>
+                            <p class="text-on-surface-variant font-body-md">Accompagnement clé en main, du diagnostic initial à la remise des clés.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-vert-energie/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                            <span class="material-symbols-outlined text-vert-croissance">troubleshoot</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-anthracite mb-1">Le défi maîtrisé</h4>
+                            <p class="text-on-surface-variant font-body-md">Audit technique préalable rigoureux pour débusquer tout vice caché avant travaux.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="inline-flex items-center gap-2 bg-vert-energie hover:bg-vert-croissance text-anthracite hover:text-white px-6 py-3 font-semibold rounded-lg transition-all group">
+                    Demander un devis
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </a>
+            </div>
+
+            <div class="rounded-2xl overflow-hidden shadow-lg reveal" style="transition-delay:150ms">
+                <img
+                    src="assets/img/service-finition-detail.jpeg"
+                    alt="Finition et réfection haut de gamme – Bosco Construction Douala"
+                    class="w-full h-full object-cover aspect-[4/3]"
+                />
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         TABLEAU SYNTHÈSE
+         Fond blanc, style cohérent avec l'accueil.
+         ============================================ -->
+    <section class="py-2xl bg-white">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-anthracite mb-4">
+                    Synthèse de notre <span class="text-vert-croissance">expertise</span>
+                </h2>
+                <div class="w-20 h-1.5 bg-vert-energie mx-auto rounded-full"></div>
+            </div>
+
+            <div class="overflow-x-auto rounded-3xl border border-border-gray shadow-sm reveal">
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="bg-anthracite text-white">
+                            <th class="p-lg font-bold uppercase tracking-wider text-sm text-vert-energie">Service</th>
+                            <th class="p-lg font-bold uppercase tracking-wider text-sm text-vert-energie">Point fort</th>
+                            <th class="p-lg font-bold uppercase tracking-wider text-sm text-vert-energie hidden md:table-cell">Défi maîtrisé</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-border-gray">
+                        <tr class="hover:bg-surface transition-colors">
+                            <td class="p-lg font-bold text-anthracite">Gros Œuvre</td>
+                            <td class="p-lg text-on-surface-variant font-body-md">Stabilité structurelle certifiée</td>
+                            <td class="p-lg text-on-surface-variant font-body-md hidden md:table-cell">Adaptation aux sols hydro-sensibles</td>
+                        </tr>
+                        <tr class="hover:bg-surface transition-colors">
+                            <td class="p-lg font-bold text-anthracite">Architecture</td>
+                            <td class="p-lg text-on-surface-variant font-body-md">Optimisation ratio coût/m²</td>
+                            <td class="p-lg text-on-surface-variant font-body-md hidden md:table-cell">Fluidité des circulations intérieures</td>
+                        </tr>
+                        <tr class="hover:bg-surface transition-colors">
+                            <td class="p-lg font-bold text-anthracite">Charpente</td>
+                            <td class="p-lg text-on-surface-variant font-body-md">Grande portée sans poteaux</td>
+                            <td class="p-lg text-on-surface-variant font-body-md hidden md:table-cell">Résistance aux vents et à l'humidité tropicale</td>
+                        </tr>
+                        <tr class="hover:bg-surface transition-colors">
+                            <td class="p-lg font-bold text-anthracite">Menuiserie</td>
+                            <td class="p-lg text-on-surface-variant font-body-md">Isolation thermique &amp; phonique</td>
+                            <td class="p-lg text-on-surface-variant font-body-md hidden md:table-cell">Précision des profilés aluminium</td>
+                        </tr>
+                        <tr class="hover:bg-surface transition-colors">
+                            <td class="p-lg font-bold text-anthracite">Finition</td>
+                            <td class="p-lg text-on-surface-variant font-body-md">Esthétique "Luxe International"</td>
+                            <td class="p-lg text-on-surface-variant font-body-md hidden md:table-cell">Élimination radicale de l'humidité</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         BANDEAU RÉASSURANCE
+         Dégradé signature — identique à l'accueil.
+         ============================================ -->
+    <div class="py-xl bg-surface">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="signature-gradient rounded-3xl p-10 md:p-12">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+                    <div class="flex items-center gap-4 reveal">
+                        <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-white text-3xl">local_shipping</span>
+                        </div>
+                        <div class="text-left">
+                            <span class="block font-bold text-white text-lg">Livraison clé en main</span>
+                            <span class="text-white/80 text-sm">De l'étude à la réception</span>
+                        </div>
+                    </div>
+                    <div class="hidden md:block w-px h-12 bg-white/30"></div>
+                    <div class="flex items-center gap-4 reveal" style="transition-delay:100ms">
+                        <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-white text-3xl">groups</span>
+                        </div>
+                        <div class="text-left">
+                            <span class="block font-bold text-white text-lg">Coordination tous corps d'état</span>
+                            <span class="text-white/80 text-sm">Pas de sous-traitance inutile</span>
+                        </div>
+                    </div>
+                    <div class="hidden md:block w-px h-12 bg-white/30"></div>
+                    <div class="flex items-center gap-4 reveal" style="transition-delay:200ms">
+                        <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-white text-3xl">verified_user</span>
+                        </div>
+                        <div class="text-left">
+                            <span class="block font-bold text-white text-lg">Garantie décennale</span>
+                            <span class="text-white/80 text-sm">Engagements sur la durée</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ============================================
+         CTA FINAL — identique à l'accueil
+         ============================================ -->
+    <section class="py-2xl bg-surface">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="bg-anthracite rounded-[40px] p-10 md:p-20 text-center text-white reveal">
+
+                <h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl mb-6">
+                    Vous avez un projet ?
+                </h2>
+                <p class="font-body-lg text-body-lg mb-10 max-w-2xl mx-auto text-white/80">
+                    Transformons vos plans en réalité. Notre équipe est prête à vous accompagner pour bâtir des structures qui durent des générations.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="contact.html"
+                       class="bg-vert-energie text-anthracite px-10 py-5 font-bold rounded-2xl hover:scale-105 hover:shadow-lg hover:shadow-vert-energie/20 transition-all">
+                        Démarrer une consultation
+                    </a>
+                    <a href="https://wa.me/237652321897"
+                       class="bg-[#25D366] text-white px-10 py-5 font-bold rounded-2xl hover:scale-105 transition-transform flex items-center justify-center gap-3 shadow-lg">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                            <use href="assets/img/icons.svg#icon-whatsapp"/>
+                        </svg>
+                        WhatsApp Direct
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         PIED DE PAGE — identique à l'accueil
+         ============================================ -->
+    <footer class="bg-primary text-on-primary pt-2xl pb-12 overflow-hidden">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-2xl">
+
+                <div class="col-span-1 md:col-span-2">
+                    <span class="font-headline-lg text-vert-energie mb-6 block">Bosco Construction Group SARL</span>
+                    <p class="text-on-primary-container font-body-md max-w-sm mb-8">
+                        Building Structural Vitality. Experts en génie civil et construction durable au cœur du Cameroun depuis plus de 10 ans.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-vert-energie transition-colors">
+                            <span class="material-symbols-outlined text-white">face_nod</span>
+                        </a>
+                        <a href="#" aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-vert-energie transition-colors">
+                            <span class="material-symbols-outlined text-white">link</span>
+                        </a>
+                        <a href="mailto:contact@bosco-group.cm" aria-label="E-mail" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-vert-energie transition-colors">
+                            <span class="material-symbols-outlined text-white">alternate_email</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold uppercase tracking-widest text-sm text-vert-energie mb-6">Contact & Accès</h4>
+                    <ul class="space-y-4 text-on-primary-container text-body-sm">
+                        <li class="flex gap-3">
+                            <span class="material-symbols-outlined text-vert-energie flex-shrink-0">location_on</span>
+                            <span>Galerie de Flore, Akwa,<br/>BP 1254, Douala, Cameroun</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="material-symbols-outlined text-vert-energie flex-shrink-0">phone_iphone</span>
+                            <a href="tel:+237652321897" class="hover:text-vert-energie transition-colors">+237 652 321 897</a>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="material-symbols-outlined text-vert-energie flex-shrink-0">schedule</span>
+                            <span>Lun – Ven : 08h00 – 18h00<br/>Samedi : 09h00 – 13h00</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold uppercase tracking-widest text-sm text-vert-energie mb-6">Navigation</h4>
+                    <ul class="space-y-3 text-on-primary-container text-body-sm">
+                        <li><a href="services.html"     class="text-vert-energie font-bold">Gros Œuvre & Terrassement</a></li>
+                        <li><a href="services.html"     class="text-vert-energie font-bold">Charpente & Menuiserie</a></li>
+                        <li><a href="realisations.html" class="hover:text-white transition-colors">Portfolio de Réalisations</a></li>
+                        <li><a href="a-propos.html"     class="hover:text-white transition-colors">À propos</a></li>
+                        <li><a href="contact.html"      class="hover:text-white transition-colors">Demander un devis</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-on-primary-container/20 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-on-primary-container">
+                <p>© 2026 Bosco Construction Group SARL. Building Structural Vitality.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-vert-energie transition-colors">Mentions légales</a>
+                    <a href="contact.html" class="hover:text-vert-energie transition-colors">Contact</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- ============================================
+         JAVASCRIPT — même fichier que l'accueil
+         + scroll fluide vers les ancres internes
+         ============================================ -->
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    var offset = 80 + 56; // navbar (80px) + barre de chips (~56px)
+                    window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
