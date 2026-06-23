@@ -6,6 +6,28 @@
 
 
 /* ------------------------------------------------
+   Page Loader
+   Masque l'écran de chargement dès que la page
+   (images incluses) est entièrement chargée.
+   ------------------------------------------------ */
+(function () {
+    const loader = document.getElementById('page-loader');
+    if (!loader) return;
+
+    const hide = () => {
+        loader.classList.add('loader-hidden');
+        loader.addEventListener('transitionend', () => loader.remove(), { once: true });
+    };
+
+    if (document.readyState === 'complete') {
+        hide();
+    } else {
+        window.addEventListener('load', hide);
+    }
+})();
+
+
+/* ------------------------------------------------
    Scroll Reveal
    Fait apparaître en fondu tous les éléments .reveal
    quand ils entrent dans le viewport.

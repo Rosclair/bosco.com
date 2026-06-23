@@ -31,13 +31,21 @@
 </head>
 <body class="bg-surface font-body-md text-anthracite selection:bg-vert-energie selection:text-anthracite">
 
+    <!-- Page Loader -->
+    <div id="page-loader" aria-hidden="true">
+        <img src="assets/img/logo.png" alt="" class="loader-logo" />
+        <div class="loader-bar-track">
+            <div class="loader-bar-fill"></div>
+        </div>
+    </div>
+
 
     <!-- NAVIGATION PRINCIPALE -->
     <nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-border-gray h-20 flex items-center">
         <div class="max-w-[1280px] mx-auto w-full flex justify-between items-center px-margin-mobile md:px-margin-desktop">
 
             <a href="index.html" class="flex items-center">
-                <img src="assets/img/logo.jpeg" alt="Bosco Construction Group" class="h-12 w-auto" />
+                <img src="assets/img/logo.png" alt="Bosco Construction Group" class="h-12 w-auto" />
             </a>
 
             <!-- Liens desktop -->
@@ -94,12 +102,6 @@
             </div>
 
             <div class="relative z-10 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop w-full text-white py-2xl">
-                <!-- Fil d'Ariane -->
-                <nav aria-label="Fil d'Ariane" class="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-vert-energie mb-6 reveal">
-                    <a href="index.html" class="hover:text-white transition-colors">Accueil</a>
-                    <span class="text-white/30">/</span>
-                    <span class="text-white/80">Blog & Conseils</span>
-                </nav>
 
                 <h1 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl mb-6 reveal">
                     Blog & <span class="text-vert-energie">Conseils</span>
@@ -129,7 +131,7 @@
                                     alt="Coût de construction à Douala en 2026"
                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                 />
-                                <span class="absolute top-4 left-4 bg-vert-energie text-anthracite px-3 py-1 font-label-sm rounded-md font-bold text-xs uppercase tracking-wider">Coûts & budget</span>
+                                <span class="absolute top-4 left-4 bg-primary/80 backdrop-blur-md text-vert-energie px-3 py-1 rounded text-xs font-bold">Coûts & budget</span>
                             </div>
                             <div class="md:w-1/2 p-8 flex flex-col justify-center">
                                 <span class="font-body-sm text-on-surface-variant mb-3 block">15 Janvier 2024 · 8 min de lecture</span>
@@ -174,7 +176,7 @@
                                     alt="Prix construction Douala 2026"
                                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                 />
-                                <span class="absolute bottom-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-md font-bold text-xs text-anthracite">Coûts & budget</span>
+                                <span class="absolute top-4 left-4 bg-primary/80 backdrop-blur-md text-vert-energie px-3 py-1 rounded text-xs font-bold">Coûts & budget</span>
                             </div>
                             <div class="p-6">
                                 <h3 class="font-headline-sm text-headline-sm mb-2 group-hover:text-vert-croissance transition-colors">Prix construction Douala 2026</h3>
@@ -195,7 +197,7 @@
                                     alt="Tôle imitation tuile vs bac acier"
                                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                 />
-                                <span class="absolute bottom-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-md font-bold text-xs text-anthracite">Toiture</span>
+                                <span class="absolute top-4 left-4 bg-primary/80 backdrop-blur-md text-vert-energie px-3 py-1 rounded text-xs font-bold">Toiture</span>
                             </div>
                             <div class="p-6">
                                 <h3 class="font-headline-sm text-headline-sm mb-2 group-hover:text-vert-croissance transition-colors">Tôle imitation tuile vs Bac acier</h3>
@@ -216,7 +218,7 @@
                                     alt="5 erreurs de gros œuvre au Cameroun"
                                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                 />
-                                <span class="absolute bottom-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-md font-bold text-xs text-anthracite">Conseils techniques</span>
+                                <span class="absolute top-4 left-4 bg-primary/80 backdrop-blur-md text-vert-energie px-3 py-1 rounded text-xs font-bold">Conseils techniques</span>
                             </div>
                             <div class="p-6">
                                 <h3 class="font-headline-sm text-headline-sm mb-2 group-hover:text-vert-croissance transition-colors">5 erreurs de gros œuvre</h3>
@@ -237,7 +239,7 @@
                                     alt="Réfection de bâtiment à Douala"
                                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                 />
-                                <span class="absolute bottom-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-md font-bold text-xs text-anthracite">Rénovation</span>
+                                <span class="absolute top-4 left-4 bg-primary/80 backdrop-blur-md text-vert-energie px-3 py-1 rounded text-xs font-bold">Rénovation</span>
                             </div>
                             <div class="p-6">
                                 <h3 class="font-headline-sm text-headline-sm mb-2 group-hover:text-vert-croissance transition-colors">Réfection de bâtiment à Douala</h3>
@@ -258,7 +260,7 @@
                                     alt="Calcul structurel pour immeuble"
                                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                 />
-                                <span class="absolute bottom-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-md font-bold text-xs text-anthracite">Construction</span>
+                                <span class="absolute top-4 left-4 bg-primary/80 backdrop-blur-md text-vert-energie px-3 py-1 rounded text-xs font-bold">Construction</span>
                             </div>
                             <div class="p-6">
                                 <h3 class="font-headline-sm text-headline-sm mb-2 group-hover:text-vert-croissance transition-colors">Calcul structurel pour immeuble</h3>
@@ -279,7 +281,7 @@
                                     alt="Charpente bois ou métallique"
                                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                 />
-                                <span class="absolute bottom-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-md font-bold text-xs text-anthracite">Toiture</span>
+                                <span class="absolute top-4 left-4 bg-primary/80 backdrop-blur-md text-vert-energie px-3 py-1 rounded text-xs font-bold">Toiture</span>
                             </div>
                             <div class="p-6">
                                 <h3 class="font-headline-sm text-headline-sm mb-2 group-hover:text-vert-croissance transition-colors">Charpente bois ou métallique ?</h3>

@@ -42,8 +42,31 @@
          ============================================ -->
     <link rel="stylesheet" href="assets/css/style.css" />
 
+    <style>
+        .before-after-slider { position: relative; overflow: hidden; user-select: none; cursor: ew-resize; }
+        .before-after-slider .after-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; clip-path: inset(0 0 0 50%); }
+        .slider-handle { position: absolute; top: 0; bottom: 0; left: 50%; width: 4px; background: #ADCE1E; transform: translateX(-50%); z-index: 10; }
+        .slider-handle::after {
+            content: "↔";
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            background: #ADCE1E; color: #2A2A2A;
+            width: 40px; height: 40px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+    </style>
+
 </head>
 <body class="bg-surface font-body-md text-anthracite selection:bg-vert-energie selection:text-anthracite">
+
+    <!-- Page Loader -->
+    <div id="page-loader" aria-hidden="true">
+        <img src="assets/img/logo.png" alt="" class="loader-logo" />
+        <div class="loader-bar-track">
+            <div class="loader-bar-fill"></div>
+        </div>
+    </div>
 
 
     <!-- ============================================
@@ -56,7 +79,7 @@
 
             <!-- Logo textuel -->
             <a href="index.html" class="flex items-center">
-                <img src="assets/img/logo.jpeg" alt="Bosco Construction Group" class="h-12 w-auto" />
+                <img src="assets/img/logo.png" alt="Bosco Construction Group" class="h-12 w-auto" />
             </a>
 
             <!-- Liens desktop (cachés sous lg) -->
@@ -105,548 +128,557 @@
 
     <main>
 
-    <!-- ============================================
-         SECTION HERO
-         Plein écran, image de fond, overlay dégradé,
-         texte accrocheur et deux boutons CTA.
-         ============================================ -->
-    <section class="relative h-screen min-h-[700px] flex items-center overflow-hidden">
+        <!-- ============================================
+            SECTION HERO
+            Plein écran, image de fond, overlay dégradé,
+            texte accrocheur et deux boutons CTA.
+            ============================================ -->
+        <section class="relative h-screen min-h-[700px] flex items-center overflow-hidden">
 
-        <!-- Image de fond (à remplacer par assets/img/) + overlay -->
-        <div class="absolute inset-0 z-0">
-            <img
-                src="assets/img/hero-chantier.jpeg"
-                alt="Chantier Bosco Construction Group à Douala"
-                class="w-full h-full object-cover"
-            />
-            <div class="absolute inset-0 gradient-overlay"></div>
-        </div>
-
-        <!-- Contenu -->
-        <div class="relative z-10 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop w-full text-white">
-
-            <!-- Badge localisation -->
-            <div class="inline-flex items-center gap-2 bg-vert-energie/20 backdrop-blur-sm px-4 py-2 rounded-full border border-vert-energie/30 mb-6 reveal">
-                <span class="w-2 h-2 rounded-full bg-vert-energie animate-pulse"></span>
-                <span class="font-body-sm font-semibold tracking-wide uppercase text-vert-energie text-[10px] md:text-sm">
-                    Intervention à Douala · Devis sous 48h
-                </span>
+            <!-- Image de fond (à remplacer par assets/img/) + overlay -->
+            <div class="absolute inset-0 z-0">
+                <img
+                    src="assets/img/hero-chantier.jpeg"
+                    alt="Chantier Bosco Construction Group à Douala"
+                    class="w-full h-full object-cover"
+                />
+                <div class="absolute inset-0 gradient-overlay"></div>
             </div>
 
-            <!-- Titre H1 -->
-            <h1 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl max-w-3xl mb-6 reveal">
-                Bâtir votre avenir avec expertise à <span class="text-vert-energie">Douala</span>
-            </h1>
+            <!-- Contenu -->
+            <div class="relative z-10 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop w-full text-white">
 
-            <!-- Accroche -->
-            <p class="font-body-lg text-body-lg max-w-xl mb-10 text-white/80 reveal">
-                Plus de 10 ans d'excellence en génie civil et construction. Nous transformons vos visions en structures solides et durables.
-            </p>
-
-            <!-- Boutons CTA -->
-            <div class="flex flex-col sm:flex-row gap-4 reveal">
-                <a href="contact.html"
-                   class="bg-vert-energie hover:shadow-lg hover:shadow-vert-energie/20 text-anthracite px-8 py-4 font-bold rounded-xl transition-all flex items-center justify-center gap-2 group">
-                    Demander un devis
-                    <i data-lucide="arrow-right" class="group-hover:translate-x-1 transition-transform"></i>
-                </a>
-                <a href="#realisations"
-                   class="border-2 border-white/30 hover:border-white hover:bg-white/10 text-white px-8 py-4 font-bold rounded-xl transition-all flex items-center justify-center gap-2">
-                    Voir nos réalisations
-                </a>
-            </div>
-
-        </div>
-
-        <!-- Indicateur de défilement -->
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50 reveal">
-            <span class="text-xs uppercase tracking-widest font-bold">Scroll</span>
-            <div class="w-[2px] h-12 bg-white/20 relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-full h-1/2 bg-vert-energie animate-[bounce_2s_infinite]"></div>
-            </div>
-        </div>
-
-    </section>
-
-
-    <!-- ============================================
-         BARRE DE STATISTIQUES
-         Fond anthracite, 3 chiffres-clés.
-         ============================================ -->
-    <div class="bg-anthracite text-white py-12 relative z-20">
-        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-white/10 text-center">
-
-                <div class="py-4 md:py-0 reveal">
-                    <span class="block font-headline-lg text-vert-energie mb-1">+10 ans</span>
-                    <span class="font-body-sm uppercase tracking-widest text-white/60">D'expérience</span>
+                <!-- Badge localisation -->
+                <div class="inline-flex items-center gap-2 bg-vert-energie/20 backdrop-blur-sm px-4 py-2 rounded-full border border-vert-energie/30 mb-6 reveal">
+                    <span class="w-2 h-2 rounded-full bg-vert-energie animate-pulse"></span>
+                    <span class="font-body-sm font-semibold tracking-wide uppercase text-vert-energie text-[10px] md:text-sm">
+                        Intervention à Douala · Devis sous 48h
+                    </span>
                 </div>
 
-                <div class="py-4 md:py-0 reveal" style="transition-delay: 100ms">
-                    <span class="block font-headline-lg text-vert-energie mb-1">50+ projets</span>
-                    <span class="font-body-sm uppercase tracking-widest text-white/60">Réalisés avec succès</span>
-                </div>
+                <!-- Titre H1 -->
+                <h1 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl max-w-3xl mb-6 reveal">
+                    Bâtir votre avenir avec expertise à <span class="text-vert-energie">Douala</span>
+                </h1>
 
-                <div class="py-4 md:py-0 reveal" style="transition-delay: 200ms">
-                    <span class="block font-headline-lg text-vert-energie mb-1">Basé à Douala</span>
-                    <span class="font-body-sm uppercase tracking-widest text-white/60">Proximité & Réactivité</span>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
-    <!-- ============================================
-         SECTION NOS SPÉCIALITÉS
-         4 cartes image avec survol (hover reveal).
-         ============================================ -->
-    <section id="services" class="py-2xl bg-surface">
-        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
-
-            <!-- En-tête de section -->
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                <div class="max-w-2xl reveal">
-                    <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-anthracite mb-4">
-                        Nos spécialités en <br /><span class="text-vert-croissance">Génie Civil</span>
-                    </h2>
-                    <p class="text-on-surface-variant font-body-md">
-                        Une expertise pluridisciplinaire pour couvrir l'intégralité de vos besoins en construction, de la fondation aux finitions les plus prestigieuses.
-                    </p>
-                </div>
-                <div class="reveal">
-                    <a href="services.html" class="group flex items-center gap-2 font-bold text-vert-croissance">
-                        Découvrir tous nos services
-                        <i data-lucide="arrow-right" class="group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Grille 4 cartes -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
-
-                <!-- 01 Gros œuvre -->
-                <div class="group relative overflow-hidden rounded-2xl aspect-[3/4] reveal">
-                    <img
-                        src="assets/img/service-gros-oeuvre.jpeg"
-                        alt="Gros œuvre et terrassement à Douala"
-                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div class="absolute inset-0 bg-gradient-to-t from-anthracite via-anthracite/20 to-transparent"></div>
-                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
-                        <span class="text-vert-energie font-bold text-xl mb-2">01</span>
-                        <h3 class="font-headline-sm text-white mb-4">Gros œuvre & terrassement</h3>
-                        <p class="text-white/70 text-body-sm">
-                            La base solide de chaque projet. Fondations, maçonnerie et structures porteuses avec une rigueur absolue.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- 02 Charpente -->
-                <div class="group relative overflow-hidden rounded-2xl aspect-[3/4] reveal" style="transition-delay: 100ms">
-                    <img
-                        src="assets/img/service-charpente.jpeg"
-                        alt="Charpente bois et métal à Douala"
-                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div class="absolute inset-0 bg-gradient-to-t from-anthracite via-anthracite/20 to-transparent"></div>
-                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
-                        <span class="text-vert-energie font-bold text-xl mb-2">02</span>
-                        <h3 class="font-headline-sm text-white mb-4">Charpente bois & métal</h3>
-                        <p class="text-white/70 text-body-sm">
-                            Toitures complexes et structures industrielles conçues pour résister aux intempéries tropicales.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- 03 Finition -->
-                <div class="group relative overflow-hidden rounded-2xl aspect-[3/4] reveal" style="transition-delay: 200ms">
-                    <img
-                        src="assets/img/service-finition.jpeg"
-                        alt="Finition et réfection à Douala"
-                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div class="absolute inset-0 bg-gradient-to-t from-anthracite via-anthracite/20 to-transparent"></div>
-                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
-                        <span class="text-vert-energie font-bold text-xl mb-2">03</span>
-                        <h3 class="font-headline-sm text-white mb-4">Finition & réfection</h3>
-                        <p class="text-white/70 text-body-sm">
-                            Le détail qui fait la différence. Peinture, carrelage et rénovation complète de vos espaces.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- 04 Menuiserie -->
-                <div class="group relative overflow-hidden rounded-2xl aspect-[3/4] reveal" style="transition-delay: 300ms">
-                    <img
-                        src="assets/img/service-menuiserie.jpeg"
-                        alt="Menuiserie aluminium à Douala"
-                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div class="absolute inset-0 bg-gradient-to-t from-anthracite via-anthracite/20 to-transparent"></div>
-                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
-                        <span class="text-vert-energie font-bold text-xl mb-2">04</span>
-                        <h3 class="font-headline-sm text-white mb-4">Menuiserie & Alu</h3>
-                        <p class="text-white/70 text-body-sm">
-                            Conception sur-mesure d'ouvertures modernes et robustes en bois noble et aluminium.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ============================================
-         SECTION POURQUOI NOUS
-         3 arguments + bloc témoignage.
-         ============================================ -->
-    <section class="py-2xl bg-white">
-        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
-
-            <!-- Titre centré -->
-            <div class="text-center mb-16 reveal">
-                <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-anthracite mb-4">
-                    Pourquoi <span class="text-vert-croissance">Bosco Construction Group ?</span>
-                </h2>
-                <div class="w-20 h-1.5 bg-vert-energie mx-auto rounded-full"></div>
-            </div>
-
-            <!-- 3 cartes -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-
-                <div class="p-6 md:p-10 border border-border-gray rounded-3xl card-hover reveal">
-                    <div class="w-16 h-16 bg-vert-energie/10 rounded-2xl flex items-center justify-center text-vert-croissance mb-8">
-                        <i data-lucide="drafting-compass" class="text-4xl"></i>
-                    </div>
-                    <h3 class="font-headline-sm mb-4">Rigueur Technique</h3>
-                    <p class="text-on-surface-variant font-body-md">
-                        Respect strict des normes DTU et des standards de sécurité internationaux pour une longévité garantie de vos édifices.
-                    </p>
-                </div>
-
-                <div class="p-6 md:p-10 border border-border-gray rounded-3xl card-hover reveal" style="transition-delay: 100ms">
-                    <div class="w-16 h-16 bg-vert-energie/10 rounded-2xl flex items-center justify-center text-vert-croissance mb-8">
-                        <i data-lucide="hard-hat" class="text-4xl"></i>
-                    </div>
-                    <h3 class="font-headline-sm mb-4">Expertise Multidisciplinaire</h3>
-                    <p class="text-on-surface-variant font-body-md">
-                        Une équipe d'ingénieurs et d'artisans qualifiés capables de gérer des projets complexes de A à Z sans sous-traitance inutile.
-                    </p>
-                </div>
-
-                <div class="p-6 md:p-10 border border-border-gray rounded-3xl card-hover reveal" style="transition-delay: 200ms">
-                    <div class="w-16 h-16 bg-vert-energie/10 rounded-2xl flex items-center justify-center text-vert-croissance mb-8">
-                        <i data-lucide="map-pin" class="text-4xl"></i>
-                    </div>
-                    <h3 class="font-headline-sm mb-4">Proximité Douala</h3>
-                    <p class="text-on-surface-variant font-body-md">
-                        Notre siège local nous permet une réactivité exemplaire et une connaissance parfaite des contraintes géologiques de la région.
-                    </p>
-                </div>
-
-            </div>
-
-            <!-- Témoignage -->
-            <div class="mt-2xl p-10 md:p-16 bg-anthracite rounded-3xl text-white relative overflow-hidden reveal">
-                <!-- Guillemet décoratif en arrière-plan -->
-                <div class="absolute top-0 right-0 p-10 opacity-10" aria-hidden="true">
-                    <i data-lucide="quote" class="text-[120px]"></i>
-                </div>
-                <div class="relative z-10 max-w-3xl">
-                    <!-- Étoiles -->
-                    <div class="flex gap-1 mb-6" aria-label="5 étoiles sur 5">
-                        <i data-lucide="star" class="text-jaune-soleil"></i>
-                        <i data-lucide="star" class="text-jaune-soleil"></i>
-                        <i data-lucide="star" class="text-jaune-soleil"></i>
-                        <i data-lucide="star" class="text-jaune-soleil"></i>
-                        <i data-lucide="star" class="text-jaune-soleil"></i>
-                    </div>
-                    <blockquote class="font-headline-md text-headline-md mb-8 leading-relaxed italic">
-                        "Bosco Construction Group a su redonner vie à notre immeuble en un temps record. Leur professionnalisme et la qualité des finitions sont incomparables à Douala."
-                    </blockquote>
-                    <cite class="flex items-center gap-4 not-italic">
-                        <div class="w-12 h-12 rounded-full bg-vert-energie flex items-center justify-center text-anthracite font-bold">JD</div>
-                        <div>
-                            <span class="block font-bold">Jean-Daniel T.</span>
-                            <span class="text-white/60 text-sm">Propriétaire immobilier, Akwa</span>
-                        </div>
-                    </cite>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- ============================================
-         SECTION RÉALISATIONS
-         3 projets phares + encart avant/après.
-         ============================================ -->
-    <section id="realisations" class="py-2xl bg-surface overflow-hidden">
-        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
-
-            <!-- En-tête -->
-            <div class="mb-16 reveal">
-                <span class="font-body-sm font-bold uppercase tracking-widest text-vert-croissance">Nos Projets Phares</span>
-                <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-anthracite mt-2">
-                    D'hier à demain : <span class="text-vert-croissance">des bâtisseurs passionnés</span>
-                </h2>
-            </div>
-
-            <!-- Grille 3 projets -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-
-                <!-- Projet 1 — Villa Akwa -->
-                <div class="group rounded-3xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all reveal">
-                    <div class="relative h-64 overflow-hidden">
-                        <img
-                            src="assets/img/projet-villa-akwa.jpeg"
-                            alt="Villa Akwa Excellence – Construction résidentielle haut standing à Douala"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                        />
-                        <span class="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-anthracite">Résidentiel</span>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="font-headline-sm mb-2">Villa Akwa Excellence</h3>
-                        <p class="text-on-surface-variant font-body-sm mb-6">Construction clé en main d'une villa contemporaine haut standing avec domotique intégrée.</p>
-                        <div class="flex justify-between items-center border-t border-border-gray pt-6">
-                            <span class="text-sm font-bold flex items-center gap-2">
-                                <i data-lucide="map-pin" class="text-vert-croissance"></i> Douala, Akwa
-                            </span>
-                            <i data-lucide="arrow-right" class="text-vert-croissance group-hover:translate-x-2 transition-transform"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Projet 2 — Dépôt logistique -->
-                <div class="group rounded-3xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all reveal" style="transition-delay: 100ms">
-                    <div class="relative h-64 overflow-hidden">
-                        <img
-                            src="assets/img/projet-hub-logistique.jpeg"
-                            alt="Dépôt logistique Zone Industrielle Magzi – Structure métallique Douala"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                        />
-                        <span class="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-anthracite">Industriel</span>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="font-headline-sm mb-2">Dépôt Logistique Zone Portuaire</h3>
-                        <p class="text-on-surface-variant font-body-sm mb-6">Structure métallique grande portée de 5000 m² optimisée pour le stockage lourd.</p>
-                        <div class="flex justify-between items-center border-t border-border-gray pt-6">
-                            <span class="text-sm font-bold flex items-center gap-2">
-                                <i data-lucide="map-pin" class="text-vert-croissance"></i> Zone Industrielle Magzi
-                            </span>
-                            <i data-lucide="arrow-right" class="text-vert-croissance group-hover:translate-x-2 transition-transform"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Projet 3 — Hôtel de la Rive -->
-                <div class="group rounded-3xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all reveal" style="transition-delay: 200ms">
-                    <div class="relative h-64 overflow-hidden">
-                        <img
-                            src="assets/img/projet-hotel-rive.jpeg"
-                            alt="Hôtel de la Rive – Réhabilitation et extension Bonapriso Douala"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                        />
-                        <span class="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-anthracite">Hôtellerie</span>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="font-headline-sm mb-2">Hôtel de la Rive</h3>
-                        <p class="text-on-surface-variant font-body-sm mb-6">Réhabilitation complète et extension d'un boutique-hôtel face au Wouri.</p>
-                        <div class="flex justify-between items-center border-t border-border-gray pt-6">
-                            <span class="text-sm font-bold flex items-center gap-2">
-                                <i data-lucide="map-pin" class="text-vert-croissance"></i> Douala, Bonapriso
-                            </span>
-                            <i data-lucide="arrow-right" class="text-vert-croissance group-hover:translate-x-2 transition-transform"></i>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Encart Avant / Après -->
-            <div class="mt-2xl reveal">
-                <div class="bg-white rounded-3xl p-8 md:p-12 shadow-sm">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-                        <!-- Texte descriptif -->
-                        <div>
-                            <span class="text-vert-croissance font-bold uppercase text-sm tracking-widest mb-4 block">Transformation</span>
-                            <h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-6">
-                                Redonnez de la valeur à votre patrimoine
-                            </h3>
-                            <p class="text-on-surface-variant mb-8 font-body-md">
-                                Nous sommes experts en réhabilitation lourde. Nous transformons des bâtiments vétustes en structures modernes, énergétiquement efficaces et esthétiquement remarquables.
-                            </p>
-                            <ul class="space-y-4">
-                                <li class="flex items-center gap-3">
-                                    <i data-lucide="circle-check" class="text-vert-energie"></i>
-                                    Audit structurel complet
-                                </li>
-                                <li class="flex items-center gap-3">
-                                    <i data-lucide="circle-check" class="text-vert-energie"></i>
-                                    Design architectural modernisé
-                                </li>
-                                <li class="flex items-center gap-3">
-                                    <i data-lucide="circle-check" class="text-vert-energie"></i>
-                                    Valorisation immobilière immédiate
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Image avec étiquettes avant/après -->
-                        <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-                            <img
-                                src="assets/img/blog-refection-batiment.jpeg"
-                                alt="Avant et après rénovation – Bosco Construction Group Douala"
-                                class="w-full h-auto"
-                            />
-                            <div class="absolute bottom-4 left-4 right-4 bg-white/80 backdrop-blur-md px-6 py-4 rounded-xl flex justify-between items-center text-sm font-bold uppercase tracking-wider text-anthracite">
-                                <span>Avant</span>
-                                <i data-lucide="arrow-left-right" class="text-vert-croissance"></i>
-                                <span>Après</span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- ============================================
-         SECTION BLOG
-         3 articles + lien vers la page blog.
-         ============================================ -->
-    <section id="blog" class="py-2xl bg-white">
-        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
-
-            <!-- En-tête avec lien "Voir tout" -->
-            <div class="flex justify-between items-end mb-16 reveal">
-                <div>
-                    <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-anthracite">
-                        Expertise & <span class="text-vert-croissance">Actualités</span>
-                    </h2>
-                    <p class="text-on-surface-variant mt-2 font-body-md">Les conseils de nos experts pour vos projets de construction au Cameroun.</p>
-                </div>
-                <a href="blog.html" class="hidden md:flex border-2 border-anthracite text-anthracite px-6 py-2 font-bold rounded-lg hover:bg-anthracite hover:text-white transition-all items-center gap-2">
-                    Voir tout le blog
-                </a>
-            </div>
-
-            <!-- Grille 3 articles -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-
-                <!-- Article 1 -->
-                <article class="group reveal">
-                    <a href="article-couts-construction.html">
-                        <div class="aspect-video overflow-hidden rounded-2xl mb-6 shadow-sm">
-                            <img
-                                src="assets/img/blog-couts-construction.jpeg"
-                                alt="Coût de construction d'une maison à Douala en 2026"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            />
-                        </div>
-                        <span class="text-xs font-bold uppercase tracking-widest text-vert-croissance mb-3 block">Économie Construction</span>
-                        <h3 class="font-headline-sm mb-4 group-hover:text-vert-croissance transition-colors">
-                            Combien coûte une maison à Douala en 2026 ?
-                        </h3>
-                    </a>
-                    <p class="text-on-surface-variant text-body-sm line-clamp-3 mb-6">
-                        Analyse détaillée des prix du sable, ciment et de la main d'œuvre pour anticiper votre budget de construction cette année.
-                    </p>
-                    <a href="article-couts-construction.html" class="font-bold text-vert-croissance hover:text-vert-energie border-b-2 border-vert-energie pb-1 text-sm inline-flex items-center gap-1 transition-colors">
-                        Lire l'article
-                    </a>
-                </article>
-
-                <!-- Article 2 -->
-                <article class="group reveal" style="transition-delay: 100ms">
-                    <a href="blog.html">
-                        <div class="aspect-video overflow-hidden rounded-2xl mb-6 shadow-sm">
-                            <img
-                                src="assets/img/blog-tole-tuile.jpeg"
-                                alt="Tôle imitation tuile vs bac acier au Cameroun"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            />
-                        </div>
-                        <span class="text-xs font-bold uppercase tracking-widest text-vert-croissance mb-3 block">Matériaux & Conseils</span>
-                        <h3 class="font-headline-sm mb-4 group-hover:text-vert-croissance transition-colors">
-                            Tôle imitation tuile vs bac acier : comment choisir ?
-                        </h3>
-                    </a>
-                    <p class="text-on-surface-variant text-body-sm line-clamp-3 mb-6">
-                        Comparaison thermique, esthétique et financière des solutions de toiture les plus populaires au Cameroun.
-                    </p>
-                    <a href="blog.html" class="font-bold text-vert-croissance hover:text-vert-energie border-b-2 border-vert-energie pb-1 text-sm inline-flex items-center gap-1 transition-colors">
-                        Lire l'article
-                    </a>
-                </article>
-
-                <!-- Article 3 -->
-                <article class="group reveal" style="transition-delay: 200ms">
-                    <a href="blog.html">
-                        <div class="aspect-video overflow-hidden rounded-2xl mb-6 shadow-sm">
-                            <img
-                                src="assets/img/blog-erreurs-construction.jpeg"
-                                alt="5 erreurs à éviter lors du gros œuvre au Cameroun"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            />
-                        </div>
-                        <span class="text-xs font-bold uppercase tracking-widest text-vert-croissance mb-3 block">Rigueur Technique</span>
-                        <h3 class="font-headline-sm mb-4 group-hover:text-vert-croissance transition-colors">
-                            5 erreurs à éviter lors du gros œuvre au Cameroun
-                        </h3>
-                    </a>
-                    <p class="text-on-surface-variant text-body-sm line-clamp-3 mb-6">
-                        Ne laissez pas votre projet s'écrouler : les pièges courants des chantiers et comment les prévenir efficacement.
-                    </p>
-                    <a href="blog.html" class="font-bold text-vert-croissance hover:text-vert-energie border-b-2 border-vert-energie pb-1 text-sm inline-flex items-center gap-1 transition-colors">
-                        Lire l'article
-                    </a>
-                </article>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ============================================
-         SECTION CTA FINAL
-         Dégradé vert signature, deux boutons.
-         ============================================ -->
-    <section class="py-2xl bg-surface">
-        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
-            <div class="signature-gradient rounded-[40px] p-10 md:p-20 text-center text-white reveal">
-
-                <h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl mb-6">
-                    Vous avez un projet ?
-                </h2>
-                <p class="font-body-lg text-body-lg mb-10 max-w-2xl mx-auto text-white/90">
-                    Transformons vos plans en réalité. Notre équipe est prête à vous accompagner pour bâtir des structures qui durent des générations.
+                <!-- Accroche -->
+                <p class="font-body-lg text-body-lg max-w-xl mb-10 text-white/80 reveal">
+                    Plus de 10 ans d'excellence en génie civil et construction. Nous transformons vos visions en structures solides et durables.
                 </p>
 
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <!-- Boutons CTA -->
+                <div class="flex flex-col sm:flex-row gap-4 reveal">
                     <a href="contact.html"
-                       class="bg-anthracite text-white px-10 py-5 font-bold rounded-2xl hover:scale-105 transition-transform shadow-2xl">
-                        Démarrer une consultation
+                    class="bg-vert-energie hover:shadow-lg hover:shadow-vert-energie/20 text-anthracite px-8 py-4 font-bold rounded-xl transition-all flex items-center justify-center gap-2 group">
+                        Demander un devis
+                        <i data-lucide="arrow-right" class="group-hover:translate-x-1 transition-transform"></i>
                     </a>
-                    <a href="https://wa.me/237652321897"
-                       class="bg-[#25D366] text-white px-10 py-5 font-bold rounded-2xl hover:scale-105 transition-transform flex items-center justify-center gap-3 shadow-lg">
-                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                            <use href="assets/img/icons.svg#icon-whatsapp"/>
-                        </svg>
-                        WhatsApp Direct
+                    <a href="#realisations"
+                    class="border-2 border-white/30 hover:border-white hover:bg-white/10 text-white px-8 py-4 font-bold rounded-xl transition-all flex items-center justify-center gap-2">
+                        Voir nos réalisations
                     </a>
                 </div>
 
             </div>
+
+            <!-- Indicateur de défilement -->
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50 reveal">
+                <span class="text-xs uppercase tracking-widest font-bold">Scroll</span>
+                <div class="w-[2px] h-12 bg-white/20 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1/2 bg-vert-energie animate-[bounce_2s_infinite]"></div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ============================================
+            BARRE DE STATISTIQUES
+            Fond anthracite, 3 chiffres-clés.
+            ============================================ -->
+        <div class="bg-anthracite text-white py-12 relative z-20">
+            <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-white/10 text-center">
+
+                    <div class="py-4 md:py-0 reveal">
+                        <span class="block font-headline-lg text-vert-energie mb-1">+10 ans</span>
+                        <span class="font-body-sm uppercase tracking-widest text-white/60">D'expérience</span>
+                    </div>
+
+                    <div class="py-4 md:py-0 reveal" style="transition-delay: 100ms">
+                        <span class="block font-headline-lg text-vert-energie mb-1">50+ projets</span>
+                        <span class="font-body-sm uppercase tracking-widest text-white/60">Réalisés avec succès</span>
+                    </div>
+
+                    <div class="py-4 md:py-0 reveal" style="transition-delay: 200ms">
+                        <span class="block font-headline-lg text-vert-energie mb-1">Basé à Douala</span>
+                        <span class="font-body-sm uppercase tracking-widest text-white/60">Proximité & Réactivité</span>
+                    </div>
+
+                </div>
+            </div>
         </div>
-    </section>
+
+
+        <!-- ============================================
+            SECTION NOS SPÉCIALITÉS
+            4 cartes image avec survol (hover reveal).
+            ============================================ -->
+        <section id="services" class="py-2xl bg-surface">
+            <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+
+                <!-- En-tête de section -->
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                    <div class="max-w-2xl reveal">
+                        <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-anthracite mb-4">
+                            Nos spécialités en <br /><span class="text-vert-croissance">Génie Civil</span>
+                        </h2>
+                        <p class="text-on-surface-variant font-body-md">
+                            Une expertise pluridisciplinaire pour couvrir l'intégralité de vos besoins en construction, de la fondation aux finitions les plus prestigieuses.
+                        </p>
+                    </div>
+                    <div class="reveal">
+                        <a href="services.html" class="group flex items-center gap-2 font-bold text-vert-croissance">
+                            Découvrir tous nos services
+                            <i data-lucide="arrow-right" class="group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Grille 4 cartes -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+
+                    <!-- 01 Gros œuvre -->
+                    <div class="group rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all duration-300 reveal">
+                        <div class="relative overflow-hidden aspect-[4/3]">
+                            <img
+                                src="assets/img/service-gros-oeuvre.jpeg"
+                                alt="Gros œuvre et terrassement à Douala"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
+                            <span class="absolute top-4 left-4 bg-vert-energie text-anthracite font-bold text-sm px-3 py-1 rounded-full">01</span>
+                        </div>
+                        <div class="p-6 border-t-2 border-vert-energie">
+                            <h3 class="font-headline-sm text-anthracite mb-3">Gros œuvre & terrassement</h3>
+                            <p class="text-on-surface-variant text-body-sm">
+                                La base solide de chaque projet. Fondations, maçonnerie et structures porteuses avec une rigueur absolue.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 02 Charpente -->
+                    <div class="group rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all duration-300 reveal" style="transition-delay: 100ms">
+                        <div class="relative overflow-hidden aspect-[4/3]">
+                            <img
+                                src="assets/img/service-charpente.jpeg"
+                                alt="Charpente bois et métal à Douala"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
+                            <span class="absolute top-4 left-4 bg-vert-energie text-anthracite font-bold text-sm px-3 py-1 rounded-full">02</span>
+                        </div>
+                        <div class="p-6 border-t-2 border-vert-energie">
+                            <h3 class="font-headline-sm text-anthracite mb-3">Charpente bois & métal</h3>
+                            <p class="text-on-surface-variant text-body-sm">
+                                Toitures complexes et structures industrielles conçues pour résister aux intempéries tropicales.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 03 Finition -->
+                    <div class="group rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all duration-300 reveal" style="transition-delay: 200ms">
+                        <div class="relative overflow-hidden aspect-[4/3]">
+                            <img
+                                src="assets/img/service-finition.jpeg"
+                                alt="Finition et réfection à Douala"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
+                            <span class="absolute top-4 left-4 bg-vert-energie text-anthracite font-bold text-sm px-3 py-1 rounded-full">03</span>
+                        </div>
+                        <div class="p-6 border-t-2 border-vert-energie">
+                            <h3 class="font-headline-sm text-anthracite mb-3">Finition & réfection</h3>
+                            <p class="text-on-surface-variant text-body-sm">
+                                Le détail qui fait la différence. Peinture, carrelage et rénovation complète de vos espaces.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 04 Menuiserie -->
+                    <div class="group rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all duration-300 reveal" style="transition-delay: 300ms">
+                        <div class="relative overflow-hidden aspect-[4/3]">
+                            <img
+                                src="assets/img/service-menuiserie.jpeg"
+                                alt="Menuiserie aluminium à Douala"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
+                            <span class="absolute top-4 left-4 bg-vert-energie text-anthracite font-bold text-sm px-3 py-1 rounded-full">04</span>
+                        </div>
+                        <div class="p-6 border-t-2 border-vert-energie">
+                            <h3 class="font-headline-sm text-anthracite mb-3">Menuiserie & Alu</h3>
+                            <p class="text-on-surface-variant text-body-sm">
+                                Conception sur-mesure d'ouvertures modernes et robustes en bois noble et aluminium.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================
+            SECTION POURQUOI NOUS
+            3 arguments + bloc témoignage.
+            ============================================ -->
+        <section class="py-2xl bg-white">
+            <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+
+                <!-- Titre centré -->
+                <div class="text-center mb-16 reveal">
+                    <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-anthracite mb-4">
+                        Pourquoi <span class="text-vert-croissance">Bosco Construction Group ?</span>
+                    </h2>
+                    <div class="w-20 h-1.5 bg-vert-energie mx-auto rounded-full"></div>
+                </div>
+
+                <!-- 3 cartes -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+
+                    <div class="p-6 md:p-10 border border-border-gray rounded-3xl card-hover reveal">
+                        <div class="w-16 h-16 bg-vert-energie/10 rounded-2xl flex items-center justify-center text-vert-croissance mb-8">
+                            <i data-lucide="drafting-compass" class="text-4xl"></i>
+                        </div>
+                        <h3 class="font-headline-sm mb-4">Rigueur Technique</h3>
+                        <p class="text-on-surface-variant font-body-md">
+                            Respect strict des normes DTU et des standards de sécurité internationaux pour une longévité garantie de vos édifices.
+                        </p>
+                    </div>
+
+                    <div class="p-6 md:p-10 border border-border-gray rounded-3xl card-hover reveal" style="transition-delay: 100ms">
+                        <div class="w-16 h-16 bg-vert-energie/10 rounded-2xl flex items-center justify-center text-vert-croissance mb-8">
+                            <i data-lucide="hard-hat" class="text-4xl"></i>
+                        </div>
+                        <h3 class="font-headline-sm mb-4">Expertise Multidisciplinaire</h3>
+                        <p class="text-on-surface-variant font-body-md">
+                            Une équipe d'ingénieurs et d'artisans qualifiés capables de gérer des projets complexes de A à Z sans sous-traitance inutile.
+                        </p>
+                    </div>
+
+                    <div class="p-6 md:p-10 border border-border-gray rounded-3xl card-hover reveal" style="transition-delay: 200ms">
+                        <div class="w-16 h-16 bg-vert-energie/10 rounded-2xl flex items-center justify-center text-vert-croissance mb-8">
+                            <i data-lucide="map-pin" class="text-4xl"></i>
+                        </div>
+                        <h3 class="font-headline-sm mb-4">Proximité Douala</h3>
+                        <p class="text-on-surface-variant font-body-md">
+                            Notre siège local nous permet une réactivité exemplaire et une connaissance parfaite des contraintes géologiques de la région.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Témoignage -->
+                <div class="mt-2xl p-10 md:p-16 bg-anthracite rounded-3xl text-white relative overflow-hidden reveal">
+                    <!-- Guillemet décoratif en arrière-plan -->
+                    <div class="absolute top-0 right-0 p-10 opacity-10" aria-hidden="true">
+                        <i data-lucide="quote" class="text-[120px]"></i>
+                    </div>
+                    <div class="relative z-10 max-w-3xl">
+                        <!-- Étoiles -->
+                        <div class="flex gap-1 mb-6" aria-label="5 étoiles sur 5">
+                            <i data-lucide="star" class="text-jaune-soleil"></i>
+                            <i data-lucide="star" class="text-jaune-soleil"></i>
+                            <i data-lucide="star" class="text-jaune-soleil"></i>
+                            <i data-lucide="star" class="text-jaune-soleil"></i>
+                            <i data-lucide="star" class="text-jaune-soleil"></i>
+                        </div>
+                        <blockquote class="font-headline-md text-headline-md mb-8 leading-relaxed italic">
+                            "Bosco Construction Group a su redonner vie à notre immeuble en un temps record. Leur professionnalisme et la qualité des finitions sont incomparables à Douala."
+                        </blockquote>
+                        <cite class="flex items-center gap-4 not-italic">
+                            <div class="w-12 h-12 rounded-full bg-vert-energie flex items-center justify-center text-anthracite font-bold">JD</div>
+                            <div>
+                                <span class="block font-bold">Jean-Daniel T.</span>
+                                <span class="text-white/60 text-sm">Propriétaire immobilier, Akwa</span>
+                            </div>
+                        </cite>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ============================================
+            SECTION RÉALISATIONS
+            3 projets phares + encart avant/après.
+            ============================================ -->
+        <section id="realisations" class="py-2xl bg-surface overflow-hidden">
+            <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+
+                <!-- En-tête -->
+                <div class="mb-16 reveal">
+                    <span class="font-body-sm font-bold uppercase tracking-widest text-vert-croissance">Nos Projets Phares</span>
+                    <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-anthracite mt-2">
+                        D'hier à demain : <span class="text-vert-croissance">des bâtisseurs passionnés</span>
+                    </h2>
+                </div>
+
+                <!-- Grille 3 projets -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+
+                    <!-- Projet 1 — Villa Akwa -->
+                    <div class="group rounded-3xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all reveal">
+                        <div class="relative h-64 overflow-hidden">
+                            <img
+                                src="assets/img/projet-villa-akwa.jpeg"
+                                alt="Villa Akwa Excellence – Construction résidentielle haut standing à Douala"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            />
+                            <span class="absolute top-4 left-4 bg-primary/80 backdrop-blur-md text-vert-energie px-3 py-1 rounded text-xs font-bold">Résidentiel</span>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-headline-sm mb-2">Villa Akwa Excellence</h3>
+                            <p class="text-on-surface-variant font-body-sm mb-6">Construction clé en main d'une villa contemporaine haut standing avec domotique intégrée.</p>
+                            <div class="flex justify-between items-center border-t border-border-gray pt-6">
+                                <span class="text-sm font-bold flex items-center gap-2">
+                                    <i data-lucide="map-pin" class="text-vert-croissance"></i> Douala, Akwa
+                                </span>
+                                <i data-lucide="arrow-right" class="text-vert-croissance group-hover:translate-x-2 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 2 — Dépôt logistique -->
+                    <div class="group rounded-3xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all reveal" style="transition-delay: 100ms">
+                        <div class="relative h-64 overflow-hidden">
+                            <img
+                                src="assets/img/projet-hub-logistique.jpeg"
+                                alt="Dépôt logistique Zone Industrielle Magzi – Structure métallique Douala"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            />
+                            <span class="absolute top-4 left-4 bg-primary/80 backdrop-blur-md text-vert-energie px-3 py-1 rounded text-xs font-bold">Industriel</span>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-headline-sm mb-2">Dépôt Logistique Zone Portuaire</h3>
+                            <p class="text-on-surface-variant font-body-sm mb-6">Structure métallique grande portée de 5000 m² optimisée pour le stockage lourd.</p>
+                            <div class="flex justify-between items-center border-t border-border-gray pt-6">
+                                <span class="text-sm font-bold flex items-center gap-2">
+                                    <i data-lucide="map-pin" class="text-vert-croissance"></i> Zone Industrielle Magzi
+                                </span>
+                                <i data-lucide="arrow-right" class="text-vert-croissance group-hover:translate-x-2 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 3 — Hôtel de la Rive -->
+                    <div class="group rounded-3xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all reveal" style="transition-delay: 200ms">
+                        <div class="relative h-64 overflow-hidden">
+                            <img
+                                src="assets/img/projet-hotel-rive.jpeg"
+                                alt="Hôtel de la Rive – Réhabilitation et extension Bonapriso Douala"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            />
+                            <span class="absolute top-4 left-4 bg-primary/80 backdrop-blur-md text-vert-energie px-3 py-1 rounded text-xs font-bold">Hôtellerie</span>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-headline-sm mb-2">Hôtel de la Rive</h3>
+                            <p class="text-on-surface-variant font-body-sm mb-6">Réhabilitation complète et extension d'un boutique-hôtel face au Wouri.</p>
+                            <div class="flex justify-between items-center border-t border-border-gray pt-6">
+                                <span class="text-sm font-bold flex items-center gap-2">
+                                    <i data-lucide="map-pin" class="text-vert-croissance"></i> Douala, Bonapriso
+                                </span>
+                                <i data-lucide="arrow-right" class="text-vert-croissance group-hover:translate-x-2 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Encart Avant / Après -->
+                <div class="mt-2xl reveal">
+                    <div class="bg-white rounded-3xl p-8 md:p-12 shadow-sm">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                            <!-- Texte descriptif -->
+                            <div>
+                                <span class="text-vert-croissance font-bold uppercase text-sm tracking-widest mb-4 block">Transformation</span>
+                                <h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-6">
+                                    Redonnez de la valeur à votre patrimoine
+                                </h3>
+                                <p class="text-on-surface-variant mb-8 font-body-md">
+                                    Nous sommes experts en réhabilitation lourde. Nous transformons des bâtiments vétustes en structures modernes, énergétiquement efficaces et esthétiquement remarquables.
+                                </p>
+                                <ul class="space-y-4">
+                                    <li class="flex items-center gap-3">
+                                        <i data-lucide="circle-check" class="text-vert-energie"></i>
+                                        Audit structurel complet
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <i data-lucide="circle-check" class="text-vert-energie"></i>
+                                        Design architectural modernisé
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <i data-lucide="circle-check" class="text-vert-energie"></i>
+                                        Valorisation immobilière immédiate
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Slider interactif avant/après -->
+                            <div class="before-after-slider aspect-video rounded-2xl shadow-2xl border border-border-gray" id="transfo-slider">
+                                <img
+                                    src="assets/img/avant-renovation.jpeg"
+                                    alt="Bâtiment avant rénovation"
+                                    class="w-full h-full object-cover"
+                                />
+                                <div class="after-img" id="transfo-after">
+                                    <img
+                                        src="assets/img/apres-renovation.jpeg"
+                                        alt="Bâtiment après rénovation"
+                                        class="w-full h-full object-cover"
+                                    />
+                                </div>
+                                <div class="slider-handle" id="transfo-handle"></div>
+                                <div class="absolute bottom-4 left-4 bg-anthracite/80 px-4 py-1 rounded-lg text-white text-xs font-bold uppercase tracking-widest pointer-events-none">Avant</div>
+                                <div class="absolute bottom-4 right-4 bg-vert-energie/90 px-4 py-1 rounded-lg text-anthracite text-xs font-bold uppercase tracking-widest pointer-events-none">Après</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ============================================
+            SECTION BLOG
+            3 articles + lien vers la page blog.
+            ============================================ -->
+        <section id="blog" class="py-2xl bg-white">
+            <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+
+                <!-- En-tête avec lien "Voir tout" -->
+                <div class="flex justify-between items-end mb-16 reveal">
+                    <div>
+                        <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-anthracite">
+                            Expertise & <span class="text-vert-croissance">Actualités</span>
+                        </h2>
+                        <p class="text-on-surface-variant mt-2 font-body-md">Les conseils de nos experts pour vos projets de construction au Cameroun.</p>
+                    </div>
+                    <a href="blog.html" class="hidden md:flex border-2 border-anthracite text-anthracite px-6 py-2 font-bold rounded-lg hover:bg-anthracite hover:text-white transition-all items-center gap-2">
+                        Voir tout le blog
+                    </a>
+                </div>
+
+                <!-- Grille 3 articles -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+
+                    <!-- Article 1 -->
+                    <article class="group reveal">
+                        <a href="article-couts-construction.html">
+                            <div class="aspect-video overflow-hidden rounded-2xl mb-6 shadow-sm">
+                                <img
+                                    src="assets/img/blog-couts-construction.jpeg"
+                                    alt="Coût de construction d'une maison à Douala en 2026"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                />
+                            </div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-vert-croissance mb-3 block">Économie Construction</span>
+                            <h3 class="font-headline-sm mb-4 group-hover:text-vert-croissance transition-colors">
+                                Combien coûte une maison à Douala en 2026 ?
+                            </h3>
+                        </a>
+                        <p class="text-on-surface-variant text-body-sm line-clamp-3 mb-6">
+                            Analyse détaillée des prix du sable, ciment et de la main d'œuvre pour anticiper votre budget de construction cette année.
+                        </p>
+                        <a href="article-couts-construction.html" class="font-bold text-vert-croissance hover:text-vert-energie border-b-2 border-vert-energie pb-1 text-sm inline-flex items-center gap-1 transition-colors">
+                            Lire l'article
+                        </a>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="group reveal" style="transition-delay: 100ms">
+                        <a href="blog.html">
+                            <div class="aspect-video overflow-hidden rounded-2xl mb-6 shadow-sm">
+                                <img
+                                    src="assets/img/blog-tole-tuile.jpeg"
+                                    alt="Tôle imitation tuile vs bac acier au Cameroun"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                />
+                            </div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-vert-croissance mb-3 block">Matériaux & Conseils</span>
+                            <h3 class="font-headline-sm mb-4 group-hover:text-vert-croissance transition-colors">
+                                Tôle imitation tuile vs bac acier : comment choisir ?
+                            </h3>
+                        </a>
+                        <p class="text-on-surface-variant text-body-sm line-clamp-3 mb-6">
+                            Comparaison thermique, esthétique et financière des solutions de toiture les plus populaires au Cameroun.
+                        </p>
+                        <a href="blog.html" class="font-bold text-vert-croissance hover:text-vert-energie border-b-2 border-vert-energie pb-1 text-sm inline-flex items-center gap-1 transition-colors">
+                            Lire l'article
+                        </a>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article class="group reveal" style="transition-delay: 200ms">
+                        <a href="blog.html">
+                            <div class="aspect-video overflow-hidden rounded-2xl mb-6 shadow-sm">
+                                <img
+                                    src="assets/img/blog-erreurs-construction.jpeg"
+                                    alt="5 erreurs à éviter lors du gros œuvre au Cameroun"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                />
+                            </div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-vert-croissance mb-3 block">Rigueur Technique</span>
+                            <h3 class="font-headline-sm mb-4 group-hover:text-vert-croissance transition-colors">
+                                5 erreurs à éviter lors du gros œuvre au Cameroun
+                            </h3>
+                        </a>
+                        <p class="text-on-surface-variant text-body-sm line-clamp-3 mb-6">
+                            Ne laissez pas votre projet s'écrouler : les pièges courants des chantiers et comment les prévenir efficacement.
+                        </p>
+                        <a href="blog.html" class="font-bold text-vert-croissance hover:text-vert-energie border-b-2 border-vert-energie pb-1 text-sm inline-flex items-center gap-1 transition-colors">
+                            Lire l'article
+                        </a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================
+            SECTION CTA FINAL
+            Dégradé vert signature, deux boutons.
+            ============================================ -->
+        <section class="py-2xl bg-surface">
+            <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="signature-gradient rounded-[40px] p-10 md:p-20 text-center text-white reveal">
+
+                    <h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl mb-6">
+                        Vous avez un projet ?
+                    </h2>
+                    <p class="font-body-lg text-body-lg mb-10 max-w-2xl mx-auto text-white/90">
+                        Transformons vos plans en réalité. Notre équipe est prête à vous accompagner pour bâtir des structures qui durent des générations.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="contact.html"
+                        class="bg-anthracite text-white px-10 py-5 font-bold rounded-2xl hover:scale-105 transition-transform shadow-2xl">
+                            Démarrer une consultation
+                        </a>
+                        <a href="https://wa.me/237652321897"
+                        class="bg-[#25D366] text-white px-10 py-5 font-bold rounded-2xl hover:scale-105 transition-transform flex items-center justify-center gap-3 shadow-lg">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                                <use href="assets/img/icons.svg#icon-whatsapp"/>
+                            </svg>
+                            WhatsApp Direct
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
 
 
     </main>
@@ -731,6 +763,24 @@
          ============================================ -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script>
+        // Slider avant/après — section Transformation
+        const transfoSlider = document.getElementById('transfo-slider');
+        const transfoHandle = document.getElementById('transfo-handle');
+        const transfoAfter  = document.getElementById('transfo-after');
+
+        const moveTransfo = (e) => {
+            const rect = transfoSlider.getBoundingClientRect();
+            const x    = Math.min(Math.max((e.pageX || e.touches[0].pageX) - rect.left, 0), transfoSlider.offsetWidth);
+            const pct  = (x / transfoSlider.offsetWidth) * 100;
+            transfoHandle.style.left    = pct + '%';
+            transfoAfter.style.clipPath = `inset(0 0 0 ${pct}%)`;
+        };
+
+        transfoSlider.addEventListener('mousemove', moveTransfo);
+        transfoSlider.addEventListener('touchmove', moveTransfo, { passive: true });
+    </script>
 
 </body>
 </html>
