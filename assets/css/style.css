@@ -1,5 +1,5 @@
 /* ================================================
-   BOSCO CONSTRUCTION GROUP — Feuille de styles
+   BOSCO CONSTRUCTION GROUP - Feuille de styles
    Styles personnalisés partagés par toutes les pages.
    Tailwind gère les utilitaires ; ce fichier contient
    uniquement ce que Tailwind ne peut pas faire seul.
@@ -7,7 +7,7 @@
 
 
 /* ------------------------------------------------
-   Lucide icons — dimensionnés via font-size
+   Lucide icons - dimensionnés via font-size
    ------------------------------------------------ */
 .lucide {
     width: 1em;
@@ -64,7 +64,7 @@
 
 
 /* ------------------------------------------------
-   Page Loader — écran de chargement plein écran
+   Page Loader - écran de chargement plein écran
    ------------------------------------------------ */
 #page-loader {
     position: fixed;
@@ -116,4 +116,39 @@
     0%   { width: 0%; }
     70%  { width: 85%; }
     100% { width: 100%; }
+}
+
+
+/* ------------------------------------------------
+   Bouton retour en haut
+   ------------------------------------------------ */
+#back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 24px;
+    z-index: 100;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #1F8438;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(31, 132, 56, 0.35);
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+#back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+#back-to-top:hover {
+    background: #ADCE1E;
+    color: #2A2A2A;
 }

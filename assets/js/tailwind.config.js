@@ -1,5 +1,5 @@
 /**
- * BOSCO CONSTRUCTION GROUP — Configuration Tailwind CSS partagée
+ * BOSCO CONSTRUCTION GROUP - Configuration Tailwind CSS partagée
  * Ce fichier est chargé après le CDN Tailwind sur chaque page.
  * Toutes les couleurs, espacements et typographies du projet sont définis ici.
  */

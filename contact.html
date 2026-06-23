@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Contactez Bosco Construction Group – Devis gratuit, WhatsApp, téléphone ou e-mail. Notre équipe répond sous 48h depuis Douala, Cameroun." />
     <title>Contactez-nous | Bosco Construction Group</title>
+    <link rel="canonical" href="https://bosco-group.cm/contact.html" />
+    <link rel="icon" type="image/png" href="assets/img/logo.png" />
 
     <!-- Open Graph -->
     <meta property="og:type"        content="website" />
@@ -26,7 +28,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-    <!-- TAILWIND CSS (build local, purgé + minifié) — npm run build:css -->
+    <!-- TAILWIND CSS (build local, purgé + minifié) - npm run build:css -->
     <link rel="stylesheet" href="assets/css/tailwind.css" />
 
     <!-- STYLES PERSONNALISÉS (partagés par toutes les pages) -->
@@ -34,7 +36,7 @@
 
     <!-- Styles spécifiques page Contact : focus des champs de formulaire (WCAG 2.4.7) -->
     <style>
-        /* Indicateur de focus accessible : outline vert + halo — WCAG 2.4.7 */
+        /* Indicateur de focus accessible : outline vert + halo - WCAG 2.4.7 */
         input:focus, select:focus, textarea:focus {
             outline: 2px solid #1F8438;
             outline-offset: 2px;
@@ -88,7 +90,7 @@
             </div>
 
             <!-- Bouton devis (desktop) -->
-            <a href="contact.html" class="hidden md:block bg-vert-energie hover:bg-vert-croissance text-anthracite hover:text-white px-6 py-3 font-semibold rounded-lg transition-all active:scale-95">
+            <a href="contact.html" class="hidden lg:block bg-vert-energie hover:bg-vert-croissance text-anthracite hover:text-white px-6 py-3 font-semibold rounded-lg transition-all active:scale-95">
                 Demander un devis
             </a>
 
@@ -134,6 +136,7 @@
                     src="assets/img/hero-pages.jpeg"
                     alt="Chantier de construction à Douala – Bosco Construction Group"
                     class="w-full h-full object-cover"
+                    fetchpriority="high" decoding="async" width="1920" height="1080"
                 />
                 <div class="absolute inset-0 gradient-overlay"></div>
             </div>
@@ -229,6 +232,12 @@
                                            class="w-full bg-surface border border-border-gray rounded-lg p-md font-body-md text-body-md" />
                                 </div>
                             </div>
+                            <div class="space-y-xs">
+                                <label for="email" class="font-label-sm text-label-sm uppercase text-text-muted">E-mail</label>
+                                <input id="email" name="email" type="email" required placeholder="votre@email.com"
+                                       class="w-full bg-surface border border-border-gray rounded-lg p-md font-body-md text-body-md" />
+                            </div>
+
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
                                 <div class="space-y-xs">
                                     <label for="type-projet" class="font-label-sm text-label-sm uppercase text-text-muted">Type de projet</label>
@@ -364,12 +373,12 @@
              ============================================ -->
         <section class="py-2xl bg-surface">
             <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
-                <div class="signature-gradient rounded-[40px] p-10 md:p-20 text-center text-white reveal">
+                <div class="signature-gradient rounded-[40px] p-10 md:p-20 text-center text-anthracite reveal">
                     <h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl mb-6">
                         Votre projet mérite une équipe d'experts.<br/>
-                        <span class="text-anthracite">Lançons-le ensemble.</span>
+                        <span class="text-anthracite/70">Lançons-le ensemble.</span>
                     </h2>
-                    <p class="font-body-lg text-body-lg mb-10 max-w-2xl mx-auto text-white/90">
+                    <p class="font-body-lg text-body-lg mb-10 max-w-2xl mx-auto text-anthracite/80">
                         Transformons vos plans en réalité. Notre équipe est prête à vous accompagner pour bâtir des structures qui durent des générations.
                     </p>
                     <div class="flex flex-col sm:flex-row justify-center gap-4">
@@ -412,7 +421,7 @@
                             <i data-lucide="facebook" class="text-white"></i>
                         </a>
                         <a href="#" aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-vert-energie transition-colors">
-                            <i data-lucide="link" class="text-white"></i>
+                            <i data-lucide="linkedin" class="text-white"></i>
                         </a>
                         <a href="mailto:contact@bosco-group.cm" aria-label="E-mail" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-vert-energie transition-colors">
                             <i data-lucide="at-sign" class="text-white"></i>

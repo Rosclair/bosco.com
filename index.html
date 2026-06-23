@@ -9,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Bosco Construction Group SARL – Experts en génie civil, charpente et finition à Douala, Cameroun. Devis gratuit sous 48h." />
     <title>Bosco Construction Group | Expertise & Excellence à Douala</title>
+    <link rel="canonical" href="https://bosco-group.cm/" />
+    <link rel="icon" type="image/png" href="assets/img/logo.png" />
 
     <!-- Open Graph -->
     <meta property="og:type"        content="website" />
@@ -41,6 +43,34 @@
          STYLES PERSONNALISÉS
          ============================================ -->
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Schema.org LocalBusiness + Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["LocalBusiness", "Organization"],
+      "name": "Bosco Construction Group SARL",
+      "description": "Experts en génie civil, charpente et finition à Douala, Cameroun. Devis gratuit sous 48h.",
+      "url": "https://bosco-group.cm/",
+      "logo": "https://bosco-group.cm/assets/img/logo.png",
+      "image": "https://bosco-group.cm/assets/img/hero-chantier.jpeg",
+      "telephone": "+237652321897",
+      "email": "contact@bosco-group.cm",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Galerie de Flore, Rue Castelnau, Akwa",
+        "addressLocality": "Douala",
+        "postalCode": "BP 1254",
+        "addressCountry": "CM"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 4.0432109, "longitude": 9.6912345 },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "13:00" }
+      ],
+      "priceRange": "FCFA"
+    }
+    </script>
 
     <style>
         .before-after-slider { position: relative; overflow: hidden; user-select: none; cursor: ew-resize; }
@@ -93,7 +123,7 @@
             </div>
 
             <!-- Bouton devis (desktop) -->
-            <a href="contact.html" class="hidden md:block bg-vert-energie hover:bg-vert-croissance text-anthracite hover:text-white px-6 py-3 font-semibold rounded-lg transition-all active:scale-95">
+            <a href="contact.html" class="hidden lg:block bg-vert-energie hover:bg-vert-croissance text-anthracite hover:text-white px-6 py-3 font-semibold rounded-lg transition-all active:scale-95">
                 Demander un devis
             </a>
 
@@ -133,7 +163,7 @@
             Plein écran, image de fond, overlay dégradé,
             texte accrocheur et deux boutons CTA.
             ============================================ -->
-        <section class="relative h-screen min-h-[700px] flex items-center overflow-hidden">
+        <section class="relative flex items-center overflow-hidden min-h-[600px] md:h-[85svh]">
 
             <!-- Image de fond (à remplacer par assets/img/) + overlay -->
             <div class="absolute inset-0 z-0">
@@ -141,6 +171,9 @@
                     src="assets/img/hero-chantier.jpeg"
                     alt="Chantier Bosco Construction Group à Douala"
                     class="w-full h-full object-cover"
+                    fetchpriority="high"
+                    decoding="async"
+                    width="1920" height="1080"
                 />
                 <div class="absolute inset-0 gradient-overlay"></div>
             </div>
@@ -255,6 +288,7 @@
                                 src="assets/img/service-gros-oeuvre.jpeg"
                                 alt="Gros œuvre et terrassement à Douala"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                loading="lazy" decoding="async" width="800" height="600"
                             />
                             <span class="absolute top-4 left-4 bg-vert-energie text-anthracite font-bold text-sm px-3 py-1 rounded-full">01</span>
                         </div>
@@ -273,6 +307,7 @@
                                 src="assets/img/service-charpente.jpeg"
                                 alt="Charpente bois et métal à Douala"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                loading="lazy" decoding="async" width="800" height="600"
                             />
                             <span class="absolute top-4 left-4 bg-vert-energie text-anthracite font-bold text-sm px-3 py-1 rounded-full">02</span>
                         </div>
@@ -291,6 +326,7 @@
                                 src="assets/img/service-finition.jpeg"
                                 alt="Finition et réfection à Douala"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                loading="lazy" decoding="async" width="800" height="600"
                             />
                             <span class="absolute top-4 left-4 bg-vert-energie text-anthracite font-bold text-sm px-3 py-1 rounded-full">03</span>
                         </div>
@@ -309,6 +345,7 @@
                                 src="assets/img/service-menuiserie.jpeg"
                                 alt="Menuiserie aluminium à Douala"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                loading="lazy" decoding="async" width="800" height="600"
                             />
                             <span class="absolute top-4 left-4 bg-vert-energie text-anthracite font-bold text-sm px-3 py-1 rounded-full">04</span>
                         </div>
@@ -425,13 +462,14 @@
                 <!-- Grille 3 projets -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
 
-                    <!-- Projet 1 — Villa Akwa -->
+                    <!-- Projet 1 - Villa Akwa -->
                     <div class="group rounded-3xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all reveal">
                         <div class="relative h-64 overflow-hidden">
                             <img
                                 src="assets/img/projet-villa-akwa.jpeg"
                                 alt="Villa Akwa Excellence – Construction résidentielle haut standing à Douala"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                loading="lazy" decoding="async" width="800" height="600"
                             />
                             <span class="absolute top-4 left-4 bg-primary/80 backdrop-blur-md text-vert-energie px-3 py-1 rounded text-xs font-bold">Résidentiel</span>
                         </div>
@@ -447,13 +485,14 @@
                         </div>
                     </div>
 
-                    <!-- Projet 2 — Dépôt logistique -->
+                    <!-- Projet 2 - Dépôt logistique -->
                     <div class="group rounded-3xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all reveal" style="transition-delay: 100ms">
                         <div class="relative h-64 overflow-hidden">
                             <img
                                 src="assets/img/projet-hub-logistique.jpeg"
                                 alt="Dépôt logistique Zone Industrielle Magzi – Structure métallique Douala"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                loading="lazy" decoding="async" width="800" height="600"
                             />
                             <span class="absolute top-4 left-4 bg-primary/80 backdrop-blur-md text-vert-energie px-3 py-1 rounded text-xs font-bold">Industriel</span>
                         </div>
@@ -469,13 +508,14 @@
                         </div>
                     </div>
 
-                    <!-- Projet 3 — Hôtel de la Rive -->
+                    <!-- Projet 3 - Hôtel de la Rive -->
                     <div class="group rounded-3xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all reveal" style="transition-delay: 200ms">
                         <div class="relative h-64 overflow-hidden">
                             <img
                                 src="assets/img/projet-hotel-rive.jpeg"
                                 alt="Hôtel de la Rive – Réhabilitation et extension Bonapriso Douala"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                loading="lazy" decoding="async" width="800" height="600"
                             />
                             <span class="absolute top-4 left-4 bg-primary/80 backdrop-blur-md text-vert-energie px-3 py-1 rounded text-xs font-bold">Hôtellerie</span>
                         </div>
@@ -529,12 +569,14 @@
                                     src="assets/img/avant-renovation.jpeg"
                                     alt="Bâtiment avant rénovation"
                                     class="w-full h-full object-cover"
+                                    loading="lazy" decoding="async" width="900" height="506"
                                 />
                                 <div class="after-img" id="transfo-after">
                                     <img
                                         src="assets/img/apres-renovation.jpeg"
                                         alt="Bâtiment après rénovation"
                                         class="w-full h-full object-cover"
+                                        loading="lazy" decoding="async" width="900" height="506"
                                     />
                                 </div>
                                 <div class="slider-handle" id="transfo-handle"></div>
@@ -565,7 +607,7 @@
                         </h2>
                         <p class="text-on-surface-variant mt-2 font-body-md">Les conseils de nos experts pour vos projets de construction au Cameroun.</p>
                     </div>
-                    <a href="blog.html" class="hidden md:flex border-2 border-anthracite text-anthracite px-6 py-2 font-bold rounded-lg hover:bg-anthracite hover:text-white transition-all items-center gap-2">
+                    <a href="blog.html" class="flex border-2 border-anthracite text-anthracite px-6 py-2 font-bold rounded-lg hover:bg-anthracite hover:text-white transition-all items-center gap-2">
                         Voir tout le blog
                     </a>
                 </div>
@@ -581,6 +623,7 @@
                                     src="assets/img/blog-couts-construction.jpeg"
                                     alt="Coût de construction d'une maison à Douala en 2026"
                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    loading="lazy" decoding="async" width="800" height="450"
                                 />
                             </div>
                             <span class="text-xs font-bold uppercase tracking-widest text-vert-croissance mb-3 block">Économie Construction</span>
@@ -604,6 +647,7 @@
                                     src="assets/img/blog-tole-tuile.jpeg"
                                     alt="Tôle imitation tuile vs bac acier au Cameroun"
                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    loading="lazy" decoding="async" width="800" height="450"
                                 />
                             </div>
                             <span class="text-xs font-bold uppercase tracking-widest text-vert-croissance mb-3 block">Matériaux & Conseils</span>
@@ -627,6 +671,7 @@
                                     src="assets/img/blog-erreurs-construction.jpeg"
                                     alt="5 erreurs à éviter lors du gros œuvre au Cameroun"
                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    loading="lazy" decoding="async" width="800" height="450"
                                 />
                             </div>
                             <span class="text-xs font-bold uppercase tracking-widest text-vert-croissance mb-3 block">Rigueur Technique</span>
@@ -653,12 +698,12 @@
             ============================================ -->
         <section class="py-2xl bg-surface">
             <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
-                <div class="signature-gradient rounded-[40px] p-10 md:p-20 text-center text-white reveal">
+                <div class="signature-gradient rounded-[40px] p-10 md:p-20 text-center text-anthracite reveal">
 
                     <h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl mb-6">
                         Vous avez un projet ?
                     </h2>
-                    <p class="font-body-lg text-body-lg mb-10 max-w-2xl mx-auto text-white/90">
+                    <p class="font-body-lg text-body-lg mb-10 max-w-2xl mx-auto text-anthracite/80">
                         Transformons vos plans en réalité. Notre équipe est prête à vous accompagner pour bâtir des structures qui durent des générations.
                     </p>
 
@@ -704,7 +749,7 @@
                             <i data-lucide="facebook" class="text-white"></i>
                         </a>
                         <a href="#" aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-vert-energie transition-colors">
-                            <i data-lucide="link" class="text-white"></i>
+                            <i data-lucide="linkedin" class="text-white"></i>
                         </a>
                         <a href="mailto:contact@bosco-group.cm" aria-label="E-mail" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-vert-energie transition-colors">
                             <i data-lucide="at-sign" class="text-white"></i>
@@ -765,7 +810,7 @@
     <script src="assets/js/main.js"></script>
 
     <script>
-        // Slider avant/après — section Transformation
+        // Slider avant/après - section Transformation
         const transfoSlider = document.getElementById('transfo-slider');
         const transfoHandle = document.getElementById('transfo-handle');
         const transfoAfter  = document.getElementById('transfo-after');
