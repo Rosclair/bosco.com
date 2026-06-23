@@ -25,6 +25,12 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 
 /* ------------------------------------------------
+   Lucide icons
+   ------------------------------------------------ */
+lucide.createIcons();
+
+
+/* ------------------------------------------------
    Ombre de la navbar au défilement
    Ajoute shadow-md quand on n'est plus en haut.
    ------------------------------------------------ */

@@ -22,7 +22,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="assets/css/tailwind.css" />
 
@@ -57,7 +57,7 @@
             </a>
 
             <button id="mobile-menu-btn" class="lg:hidden p-2 text-primary" aria-label="Ouvrir le menu">
-                <span class="material-symbols-outlined">menu</span>
+                <i data-lucide="menu"></i>
             </button>
 
         </div>
@@ -69,7 +69,7 @@
          ============================================ -->
     <div id="mobile-menu" class="fixed inset-0 bg-primary z-[60] flex-col items-center justify-center gap-8 hidden">
         <button id="close-menu" class="absolute top-6 right-6 text-white" aria-label="Fermer le menu">
-            <span class="material-symbols-outlined text-4xl">close</span>
+            <i data-lucide="x" class="text-4xl"></i>
         </button>
         <a href="index.html"       class="text-white text-2xl font-headline-md">Accueil</a>
         <a href="services.html"    class="text-white text-2xl font-headline-md">Services</a>
@@ -87,32 +87,30 @@
 
         <!-- ============================================
              SECTION HERO
-             Hauteur fixe 400 px, image de fond, overlay.
              ============================================ -->
-        <section class="relative h-[400px] flex items-center overflow-hidden">
+        <section class="relative flex items-center overflow-hidden pt-20 min-h-[400px] md:min-h-[500px]">
 
             <div class="absolute inset-0 z-0">
-                <div class="absolute inset-0 bg-primary/60 z-10"></div>
-                <div
-                    class="w-full h-full bg-cover bg-center transition-transform duration-[10s] hover:scale-105"
-                    style="background-image: url('assets/img/hero-apropos.jpeg')"
-                    role="img"
-                    aria-label="Chantier professionnel Bosco Construction Group à Douala"
-                ></div>
+                <img
+                    src="assets/img/hero-pages.jpeg"
+                    alt="Chantier professionnel Bosco Construction Group à Douala"
+                    class="w-full h-full object-cover"
+                />
+                <div class="absolute inset-0 gradient-overlay"></div>
             </div>
 
-            <div class="relative z-20 px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto w-full text-white">
+            <div class="relative z-10 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop w-full text-white py-2xl">
                 <!-- Fil d'Ariane -->
-                <nav class="flex mb-md text-[12px] font-semibold uppercase tracking-wider opacity-80" aria-label="Fil d'Ariane">
-                    <a href="index.html" class="hover:text-vert-energie transition-colors">Accueil</a>
-                    <span class="mx-xs">/</span>
-                    <span class="text-vert-energie">À propos</span>
+                <nav aria-label="Fil d'Ariane" class="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-vert-energie mb-6 reveal">
+                    <a href="index.html" class="hover:text-white transition-colors">Accueil</a>
+                    <span class="text-white/30">/</span>
+                    <span class="text-white/80">À propos</span>
                 </nav>
 
-                <h1 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl mb-md">
-                    À propos de Bosco Construction Group
+                <h1 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl mb-6 reveal">
+                    À propos de <span class="text-vert-energie">Bosco Construction Group</span>
                 </h1>
-                <p class="font-body-lg text-body-lg max-w-2xl text-on-primary-container">
+                <p class="font-body-lg text-body-lg max-w-2xl text-white/80 reveal">
                     Plus d'une décennie d'excellence en ingénierie et construction au cœur du Cameroun.
                 </p>
             </div>
@@ -140,11 +138,11 @@
 
                     <div class="flex flex-wrap gap-md">
                         <div class="bg-gray-50 p-md rounded-xl flex items-center gap-sm">
-                            <span class="material-symbols-outlined text-secondary">verified</span>
+                            <i data-lucide="badge-check" class="text-secondary"></i>
                             <span class="font-bold text-[14px] uppercase tracking-wider">Qualité Certifiée</span>
                         </div>
                         <div class="bg-gray-50 p-md rounded-xl flex items-center gap-sm">
-                            <span class="material-symbols-outlined text-secondary">engineering</span>
+                            <i data-lucide="hard-hat" class="text-secondary"></i>
                             <span class="font-bold text-[14px] uppercase tracking-wider">Équipe Experte</span>
                         </div>
                     </div>
@@ -179,7 +177,7 @@
 
                     <div class="bg-white p-xl rounded-3xl border border-border-gray card-hover reveal">
                         <div class="w-16 h-16 bg-vert-energie/20 text-secondary rounded-full flex items-center justify-center mb-lg">
-                            <span class="material-symbols-outlined text-4xl">architecture</span>
+                            <i data-lucide="drafting-compass" class="text-4xl"></i>
                         </div>
                         <h3 class="font-headline-sm text-headline-sm mb-md">Rigueur technique</h3>
                         <p class="text-on-surface-variant font-body-md">Des calculs de structure précis et une sécurité sans compromis pour chaque projet, du résidentiel au tertiaire.</p>
@@ -187,7 +185,7 @@
 
                     <div class="bg-white p-xl rounded-3xl border border-border-gray card-hover reveal" style="transition-delay: 100ms">
                         <div class="w-16 h-16 bg-vert-energie/20 text-secondary rounded-full flex items-center justify-center mb-lg">
-                            <span class="material-symbols-outlined text-4xl">construction</span>
+                            <i data-lucide="hammer" class="text-4xl"></i>
                         </div>
                         <h3 class="font-headline-sm text-headline-sm mb-md">Expertise multidisciplinaire</h3>
                         <p class="text-on-surface-variant font-body-md">Une maîtrise complète : architecture, rénovation et menuiserie pour une cohérence totale de vos chantiers.</p>
@@ -195,7 +193,7 @@
 
                     <div class="bg-white p-xl rounded-3xl border border-border-gray card-hover reveal" style="transition-delay: 200ms">
                         <div class="w-16 h-16 bg-vert-energie/20 text-secondary rounded-full flex items-center justify-center mb-lg">
-                            <span class="material-symbols-outlined text-4xl">location_on</span>
+                            <i data-lucide="map-pin" class="text-4xl"></i>
                         </div>
                         <h3 class="font-headline-sm text-headline-sm mb-md">Proximité & réactivité</h3>
                         <p class="text-on-surface-variant font-body-md">Basés à Akwa, Douala, nous assurons un suivi personnalisé et une réactivité immédiate sur tous nos sites.</p>
@@ -217,19 +215,19 @@
                     <h2 class="font-headline-lg text-headline-lg mb-lg text-vert-energie">Pourquoi nous choisir ?</h2>
                     <ul class="space-y-md">
                         <li class="flex items-start gap-md">
-                            <span class="material-symbols-outlined text-vert-energie mt-1 flex-shrink-0">check_circle</span>
+                            <i data-lucide="circle-check" class="text-vert-energie mt-1 flex-shrink-0"></i>
                             <p class="font-body-md">Fusion unique entre charpente artisanale traditionnelle et ingénierie civile moderne.</p>
                         </li>
                         <li class="flex items-start gap-md">
-                            <span class="material-symbols-outlined text-vert-energie mt-1 flex-shrink-0">check_circle</span>
+                            <i data-lucide="circle-check" class="text-vert-energie mt-1 flex-shrink-0"></i>
                             <p class="font-body-md">Connaissance approfondie des défis climatiques et des types de sols spécifiques à Douala.</p>
                         </li>
                         <li class="flex items-start gap-md">
-                            <span class="material-symbols-outlined text-vert-energie mt-1 flex-shrink-0">check_circle</span>
+                            <i data-lucide="circle-check" class="text-vert-energie mt-1 flex-shrink-0"></i>
                             <p class="font-body-md">Gestion transparente des budgets et respect strict des délais contractuels.</p>
                         </li>
                         <li class="flex items-start gap-md">
-                            <span class="material-symbols-outlined text-vert-energie mt-1 flex-shrink-0">check_circle</span>
+                            <i data-lucide="circle-check" class="text-vert-energie mt-1 flex-shrink-0"></i>
                             <p class="font-body-md">Utilisation de matériaux durables et de techniques de construction éco-responsables.</p>
                         </li>
                     </ul>
@@ -312,7 +310,7 @@
                     <div class="space-y-lg">
 
                         <div class="flex items-start gap-md">
-                            <span class="material-symbols-outlined text-secondary text-3xl flex-shrink-0">location_on</span>
+                            <i data-lucide="map-pin" class="text-secondary text-3xl flex-shrink-0"></i>
                             <div>
                                 <div class="font-bold text-[14px] uppercase tracking-wider mb-xs">Adresse Bureau</div>
                                 <p class="text-on-surface-variant font-body-md">Galerie de Flore, Rue Castelnau, Akwa, Douala, Cameroun</p>
@@ -320,7 +318,7 @@
                         </div>
 
                         <div class="flex items-start gap-md">
-                            <span class="material-symbols-outlined text-secondary text-3xl flex-shrink-0">schedule</span>
+                            <i data-lucide="clock" class="text-secondary text-3xl flex-shrink-0"></i>
                             <div>
                                 <div class="font-bold text-[14px] uppercase tracking-wider mb-xs">Heures d'ouverture</div>
                                 <p class="text-on-surface-variant font-body-md">Lundi – Vendredi : 08h00 – 18h00<br/>Samedi : 09h00 – 13h00</p>
@@ -328,7 +326,7 @@
                         </div>
 
                         <div class="flex items-start gap-md">
-                            <span class="material-symbols-outlined text-secondary text-3xl flex-shrink-0">phone_iphone</span>
+                            <i data-lucide="smartphone" class="text-secondary text-3xl flex-shrink-0"></i>
                             <div>
                                 <div class="font-bold text-[14px] uppercase tracking-wider mb-xs">Support WhatsApp</div>
                                 <a href="tel:+237652321897" class="text-on-surface-variant font-body-md hover:text-secondary transition-colors">+237 652 321 897</a>
@@ -403,13 +401,13 @@
                     </p>
                     <div class="flex gap-4">
                         <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-vert-energie transition-colors">
-                            <span class="material-symbols-outlined text-white">face_nod</span>
+                            <i data-lucide="facebook" class="text-white"></i>
                         </a>
                         <a href="#" aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-vert-energie transition-colors">
-                            <span class="material-symbols-outlined text-white">link</span>
+                            <i data-lucide="link" class="text-white"></i>
                         </a>
                         <a href="mailto:contact@bosco-group.cm" aria-label="E-mail" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-vert-energie transition-colors">
-                            <span class="material-symbols-outlined text-white">alternate_email</span>
+                            <i data-lucide="at-sign" class="text-white"></i>
                         </a>
                     </div>
                 </div>
@@ -418,15 +416,15 @@
                     <h4 class="font-bold uppercase tracking-widest text-sm text-vert-energie mb-6">Contact & Accès</h4>
                     <ul class="space-y-4 text-on-primary-container text-body-sm">
                         <li class="flex gap-3">
-                            <span class="material-symbols-outlined text-vert-energie flex-shrink-0">location_on</span>
+                            <i data-lucide="map-pin" class="text-vert-energie flex-shrink-0"></i>
                             <span>Galerie de Flore, Akwa,<br/>BP 1254, Douala, Cameroun</span>
                         </li>
                         <li class="flex gap-3">
-                            <span class="material-symbols-outlined text-vert-energie flex-shrink-0">phone_iphone</span>
+                            <i data-lucide="smartphone" class="text-vert-energie flex-shrink-0"></i>
                             <a href="tel:+237652321897" class="hover:text-vert-energie transition-colors">+237 652 321 897</a>
                         </li>
                         <li class="flex gap-3">
-                            <span class="material-symbols-outlined text-vert-energie flex-shrink-0">schedule</span>
+                            <i data-lucide="clock" class="text-vert-energie flex-shrink-0"></i>
                             <span>Lun – Ven : 08h00 – 18h00<br/>Samedi : 09h00 – 13h00</span>
                         </li>
                     </ul>
@@ -457,6 +455,7 @@
     </footer>
 
 
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
     <script src="assets/js/main.js"></script>
 
 </body>
