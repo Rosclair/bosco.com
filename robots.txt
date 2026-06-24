@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://bosco-group.cm/sitemap.xml

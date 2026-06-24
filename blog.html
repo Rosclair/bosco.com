@@ -1,510 +1,217 @@
 ﻿<!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog & conseils | Bosco Construction Group - Expertise BTP à Douala</title>
+  <meta name="description" content="Conseils d'experts en construction à Douala : coûts, matériaux, gros œuvre, réfection et calcul structurel. Le blog de Bosco Construction Group." />
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Blog & Conseils Bosco Construction Group – Experts en bâtiment à Douala. Coûts, techniques, toiture et tendances construction au Cameroun." />
-    <title>Blog & Conseils | Bosco Construction Group SARL</title>
-    <link rel="canonical" href="https://bosco-group.cm/blog.html" />
-    <link rel="icon" type="image/png" href="assets/img/logo.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_CM" />
+  <meta property="og:title" content="Blog & conseils | Bosco Construction Group" />
+  <meta property="og:description" content="Anticipez, budgétisez et réussissez vos projets de construction au Cameroun." />
+  <meta property="og:image" content="assets/images/service-gros-oeuvre.jpeg" />
 
-    <!-- Open Graph -->
-    <meta property="og:type"        content="website" />
-    <meta property="og:url"         content="https://bosco-group.cm/blog.html" />
-    <meta property="og:title"       content="Blog & Conseils | Bosco Construction Group SARL" />
-    <meta property="og:description" content="Conseils d'experts en construction au Cameroun : coûts, matériaux, toiture, gros œuvre. Tout pour bien construire à Douala." />
-    <meta property="og:image"       content="https://bosco-group.cm/assets/img/blog-couts-construction.jpeg" />
-    <meta property="og:locale"      content="fr_CM" />
-    <!-- Twitter Card -->
-    <meta name="twitter:card"        content="summary_large_image" />
-    <meta name="twitter:title"       content="Blog & Conseils | Bosco Construction Group SARL" />
-    <meta name="twitter:description" content="Conseils d'experts en construction au Cameroun : coûts, matériaux, toiture, gros œuvre. Tout pour bien construire à Douala." />
-    <meta name="twitter:image"       content="https://bosco-group.cm/assets/img/blog-couts-construction.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-
-    <link rel="stylesheet" href="assets/css/tailwind.css" />
-
-    <link rel="stylesheet" href="assets/css/style.css" />
-
+  <link rel="stylesheet" href="assets/css/global.css" />
 </head>
-<body class="bg-surface font-body-md text-anthracite selection:bg-vert-energie selection:text-anthracite">
 
-    <!-- Page Loader -->
-    <div id="page-loader" aria-hidden="true">
-        <img src="assets/img/logo.png" alt="" class="loader-logo" />
-        <div class="loader-bar-track">
-            <div class="loader-bar-fill"></div>
-        </div>
+<body>
+  <!-- ====================== HEADER ====================== -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="brand" aria-label="Bosco Construction Group - accueil">
+        <img src="assets/images/logo.png" alt="" />
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="realisations.html">Réalisations</a></li>
+          <li><a href="blog.html" aria-current="true">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="contact.html" class="btn header-cta">Demander un devis</a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
     </div>
+  </header>
 
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Menu mobile">
+    <ul>
+      <li><a href="index.html"><span class="idx">01</span>Accueil</a></li>
+      <li><a href="services.html"><span class="idx">02</span>Services</a></li>
+      <li><a href="realisations.html"><span class="idx">03</span>Réalisations</a></li>
+      <li><a href="blog.html"><span class="idx">04</span>Blog</a></li>
+      <li><a href="contact.html"><span class="idx">05</span>Contact</a></li>
+    </ul>
+    <p class="mm-foot">Galerie de Flore, Rue Castelnau · Akwa, Douala<br />+237 652 321 897</p>
+  </nav>
 
-    <!-- NAVIGATION PRINCIPALE -->
-    <nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-border-gray h-20 flex items-center">
-        <div class="max-w-[1280px] mx-auto w-full flex justify-between items-center px-margin-mobile md:px-margin-desktop">
+  <main>
+    <!-- ====================== PAGE HERO ====================== -->
+    <section class="page-hero">
+      <div class="page-hero-media"><img src="assets/images/service-gros-oeuvre.jpeg" alt="" /></div>
+      <div class="container">
+        <h1>Conseils & expertise pour bâtir au Cameroun</h1>
+        <p>Coûts, matériaux, normes, réfection : nos ingénieurs partagent ce qu'il faut savoir pour anticiper, budgétiser et réussir vos projets de construction à Douala.</p>
+      </div>
+    </section>
 
-            <a href="index.html" class="flex items-center">
-                <img src="assets/img/logo.png" alt="Bosco Construction Group" class="h-12 w-auto" />
+    <!-- ====================== ARTICLES ====================== -->
+    <section class="section" aria-labelledby="blog-title">
+      <div class="container">
+        <h2 id="blog-title" class="visually-hidden">Tous les articles</h2>
+
+        <!-- Barre d'outils -->
+        <div class="blog-toolbar" data-reveal>
+          <div class="filters" role="tablist" aria-label="Filtrer par catégorie">
+            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Tous</button>
+            <button class="filter-btn" data-filter="economie" role="tab" aria-selected="false">Économie</button>
+            <button class="filter-btn" data-filter="materiaux" role="tab" aria-selected="false">Matériaux</button>
+            <button class="filter-btn" data-filter="technique" role="tab" aria-selected="false">Technique</button>
+            <button class="filter-btn" data-filter="refection" role="tab" aria-selected="false">Réfection</button>
+            <button class="filter-btn" data-filter="structure" role="tab" aria-selected="false">Structure</button>
+          </div>
+          <div class="search">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <label for="blogSearch" class="visually-hidden">Rechercher un article</label>
+            <input type="search" id="blogSearch" placeholder="Rechercher un article…" autocomplete="off" />
+          </div>
+        </div>
+
+        <!-- Grille -->
+        <div class="blog-grid" id="blogGrid">
+
+          <!-- Article à la une -->
+          <article class="post-card feature" data-reveal data-category="economie" data-title="Combien coûte une maison à Douala en 2026 ? Sable ciment main-d'œuvre fondations budget construction prix">
+            <a class="post-media" href="article_detail.html" aria-label="Lire : Combien coûte une maison à Douala en 2026 ?">
+              <img src="assets/images/blog-couts-construction.jpeg" alt="Coût de construction d'une maison à Douala en 2026" loading="lazy" />
             </a>
-
-            <!-- Liens desktop -->
-            <div class="hidden lg:flex items-center gap-8">
-                <a href="index.html"       class="text-on-surface-variant hover:text-primary transition-colors text-[14px] uppercase tracking-wider">Accueil</a>
-                <a href="services.html"    class="text-on-surface-variant hover:text-primary transition-colors text-[14px] uppercase tracking-wider">Services</a>
-                <a href="realisations.html" class="text-on-surface-variant hover:text-primary transition-colors text-[14px] uppercase tracking-wider">Réalisations</a>
-                <a href="blog.html"        class="text-vert-croissance font-bold border-b-2 border-vert-energie pb-1 text-[14px] uppercase tracking-wider" aria-current="page">Blog</a>
-                <a href="a-propos.html"    class="text-on-surface-variant hover:text-primary transition-colors text-[14px] uppercase tracking-wider">À propos</a>
-                <a href="contact.html"     class="text-on-surface-variant hover:text-primary transition-colors text-[14px] uppercase tracking-wider">Contact</a>
+            <div class="post-body">
+              <div class="post-meta"><span class="cat">Économie · À la une</span><span class="dot"></span><span>12 juin 2026</span><span class="dot"></span><span>8 min</span></div>
+              <h3><a href="article_detail.html">Combien coûte réellement la construction d'une maison à Douala en 2026 ?</a></h3>
+              <p class="post-excerpt">Sable, ciment, main-d'œuvre, fondations : nous décomposons les postes qui pèsent vraiment dans le budget d'une maison à Douala, pour vous aider à anticiper sans mauvaise surprise.</p>
+              <a class="read-more" href="article_detail.html">Lire l'article <span class="arrow" aria-hidden="true">→</span></a>
             </div>
+          </article>
 
-            <a href="contact.html" class="hidden lg:block bg-vert-energie hover:bg-vert-croissance text-anthracite hover:text-white px-6 py-3 font-semibold rounded-lg transition-all active:scale-95">
-                Demander un devis
+          <article class="post-card" data-reveal data-i="0" data-category="materiaux" data-title="Tôle imitation tuile vs bac acier couverture toiture choisir comparatif isolation thermique">
+            <a class="post-media" href="article_detail.html" aria-label="Lire : Tôle imitation tuile vs bac acier">
+              <img src="assets/images/blog-tole-tuile.jpeg" alt="Tôle imitation tuile vs bac acier au Cameroun" loading="lazy" />
             </a>
+            <div class="post-body">
+              <div class="post-meta"><span class="cat">Matériaux</span><span class="dot"></span><span>5 juin 2026</span><span class="dot"></span><span>6 min</span></div>
+              <h3><a href="article_detail.html">Tôle imitation tuile vs bac acier : comment choisir ?</a></h3>
+              <p class="post-excerpt">Esthétique, isolation thermique, budget, durée de vie : le comparatif des deux solutions de couverture les plus répandues au Cameroun, pour choisir en connaissance de cause.</p>
+              <a class="read-more" href="article_detail.html">Lire l'article <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </article>
 
-            <button id="mobile-menu-btn" class="lg:hidden p-2 text-primary" aria-label="Ouvrir le menu">
-                <i data-lucide="menu"></i>
-            </button>
+          <article class="post-card" data-reveal data-i="1" data-category="technique" data-title="5 erreurs à éviter gros œuvre Cameroun fissures béton ferraillage drainage chantier">
+            <a class="post-media" href="article_detail.html" aria-label="Lire : 5 erreurs à éviter lors du gros œuvre">
+              <img src="assets/images/blog-erreurs-construction.jpeg" alt="5 erreurs à éviter lors du gros œuvre au Cameroun" loading="lazy" />
+            </a>
+            <div class="post-body">
+              <div class="post-meta"><span class="cat">Technique</span><span class="dot"></span><span>28 mai 2026</span><span class="dot"></span><span>7 min</span></div>
+              <h3><a href="article_detail.html">5 erreurs classiques à éviter lors du gros œuvre</a></h3>
+              <p class="post-excerpt">Dosage du béton, ferraillage, drainage… Les pièges les plus fréquents des chantiers camerounais et les bons réflexes pour prévenir durablement les fissures.</p>
+              <a class="read-more" href="article_detail.html">Lire l'article <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="post-card" data-reveal data-i="2" data-category="refection" data-title="Réfection bâtiments Douala valoriser patrimoine immobilier rénovation audit façade">
+            <a class="post-media" href="article_detail.html" aria-label="Lire : Réfection de bâtiments à Douala">
+              <img src="assets/images/blog-refection-batiment.jpeg" alt="Réfection de bâtiments à Douala pour valoriser le patrimoine" loading="lazy" />
+            </a>
+            <div class="post-body">
+              <div class="post-meta"><span class="cat">Réfection</span><span class="dot"></span><span>20 mai 2026</span><span class="dot"></span><span>6 min</span></div>
+              <h3><a href="article_detail.html">Réfection de bâtiments : comment valoriser votre patrimoine ?</a></h3>
+              <p class="post-excerpt">Plutôt que de démolir, valorisez. Comment un audit technique, une réfection de façade et une remise aux normes peuvent augmenter la valeur de votre bien immobilier.</p>
+              <a class="read-more" href="article_detail.html">Lire l'article <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="post-card" data-reveal data-i="0" data-category="structure" data-title="Importance calcul structurel immeuble plusieurs étages sécurité ingénierie béton armé">
+            <a class="post-media" href="article_detail.html" aria-label="Lire : L'importance du calcul structurel">
+              <img src="assets/images/blog-calcul-structure.jpeg" alt="Calcul structurel pour un immeuble de plusieurs étages" loading="lazy" />
+            </a>
+            <div class="post-body">
+              <div class="post-meta"><span class="cat">Structure</span><span class="dot"></span><span>14 mai 2026</span><span class="dot"></span><span>5 min</span></div>
+              <h3><a href="article_detail.html">Calcul structurel : la sécurité avant tout pour vos étages</a></h3>
+              <p class="post-excerpt">Plus un immeuble monte, plus la marge d'erreur se réduit. Pourquoi le calcul structurel n'est pas une option, mais le socle même de la sécurité de vos étages.</p>
+              <a class="read-more" href="article_detail.html">Lire l'article <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </article>
 
         </div>
-    </nav>
+        <p class="grid-empty" id="gridEmpty">Aucun article ne correspond à votre recherche.</p>
+      </div>
+    </section>
 
+    <!-- ====================== CTA BAND ====================== -->
+    <section class="section cta-band" aria-labelledby="cta-title">
+      <div class="container cta-inner" data-reveal>
+        <h2 id="cta-title">Une question technique sur votre projet ?</h2>
+        <p>Ne restez pas avec un doute. Nos ingénieurs vous donnent un avis clair et un devis sous 48h.</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn--on-dark">Demander un avis d'expert <span class="arrow" aria-hidden="true">→</span></a>
+          <a href="https://wa.me/237652321897" class="btn btn--outline-light" target="_blank" rel="noopener">WhatsApp direct</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <!-- MENU MOBILE -->
-    <div id="mobile-menu" class="fixed inset-0 bg-primary z-[60] flex-col items-center justify-center gap-8 hidden">
-        <button id="close-menu" class="absolute top-6 right-6 text-white" aria-label="Fermer le menu">
-            <i data-lucide="x" class="text-4xl"></i>
-        </button>
-        <a href="index.html"       class="text-white text-2xl font-headline-md">Accueil</a>
-        <a href="services.html"    class="text-white text-2xl font-headline-md">Services</a>
-        <a href="realisations.html" class="text-white text-2xl font-headline-md">Réalisations</a>
-        <a href="blog.html"        class="text-vert-energie text-2xl font-headline-md font-bold">Blog</a>
-        <a href="a-propos.html"    class="text-white text-2xl font-headline-md">À propos</a>
-        <a href="contact.html"     class="text-white text-2xl font-headline-md">Contact</a>
-        <a href="contact.html"     class="bg-vert-energie text-anthracite px-8 py-4 font-bold rounded-xl mt-4">
-            Demander un devis
-        </a>
+  <!-- ====================== FOOTER ====================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand">
+            <img src="assets/images/logo.png" alt="" />
+            <span>Bosco Construction Group<small>Building Structural Vitality</small></span>
+          </a>
+          <p>Experts en génie civil et construction durable au cœur du Cameroun depuis plus de 10 ans.</p>
+          <div class="socials">
+            <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1Z"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 7A1.94 1.94 0 1 1 5 5.06 1.94 1.94 0 0 1 6.94 7ZM5.3 8.5h3.27V19H5.3Zm5.16 0h3.13v1.43h.05a3.43 3.43 0 0 1 3.09-1.7c3.3 0 3.91 2.17 3.91 5V19h-3.26v-4.66c0-1.11 0-2.54-1.55-2.54s-1.78 1.21-1.78 2.46V19h-3.26Z"/></svg></a>
+            <a href="https://wa.me/237652321897" aria-label="WhatsApp" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2s-1.2.3-3.9-.9-4.3-4-4.5-4.2-1-1.4-1-2.6.6-1.8.9-2 .5-.2.7-.2h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.4-.1.7s.7 1.2 1.5 1.9c1 .9 1.8 1.1 2 1.2s.4.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3a2.6 2.6 0 0 1-.2 1.3Z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="services.html#gros-oeuvre">Gros Œuvre & terrassement</a></li>
+            <li><a href="services.html#charpente">Charpente & menuiserie</a></li>
+            <li><a href="realisations.html">Réalisations</a></li>
+            <li><a href="contact.html">Demander un devis</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact & accès</h4>
+          <address>
+            Galerie de Flore, Rue Castelnau<br />
+            Akwa, BP 1254 - Douala, Cameroun<br />
+            <a href="tel:+237652321897">+237 652 321 897</a><br />
+            <a href="mailto:contact@bosco-group.cm">contact@bosco-group.cm</a><br />
+            Lun - Ven : 08h00 - 18h00 · Sam : 09h - 13h
+          </address>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Bosco Construction Group SARL. Building Structural Vitality.</span>
+        <span class="links"><a href="#">Mentions légales</a><a href="contact.html">Contact</a></span>
+      </div>
     </div>
+  </footer>
 
-
-    <main class="pt-20">
-
-        <!-- HERO / EN-TÊTE -->
-        <section class="relative flex items-center overflow-hidden pt-20 min-h-[400px] md:min-h-[500px]">
-
-            <div class="absolute inset-0 z-0">
-                <img
-                    src="assets/img/hero-pages.jpeg"
-                    alt="Blog et conseils construction – Bosco Construction Group Douala"
-                    class="w-full h-full object-cover"
-                    fetchpriority="high" decoding="async" width="1920" height="1080"
-                />
-                <div class="absolute inset-0 gradient-overlay"></div>
-            </div>
-
-            <div class="relative z-10 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop w-full text-white py-2xl">
-
-                <h1 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl mb-6 reveal">
-                    Blog & <span class="text-vert-energie">Conseils</span>
-                </h1>
-                <p class="font-body-lg text-body-lg max-w-2xl text-white/80 reveal">
-                    Nos conseils d'experts pour bien construire et rénover à Douala. Expertise technique, analyse de coûts et tendances architecturales au Cameroun.
-                </p>
-            </div>
-
-        </section>
-
-
-        <!-- CONTENU PRINCIPAL + SIDEBAR -->
-        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-12 gap-2xl mt-xl">
-
-
-            <!-- COLONNE PRINCIPALE -->
-            <div class="lg:col-span-8">
-
-                <!-- Article à la une -->
-                <section class="mb-2xl group">
-                    <a href="article-couts-construction.html" class="block">
-                        <div class="relative bg-white rounded-2xl overflow-hidden border border-border-gray hover:shadow-lg transition-all duration-300 flex flex-col md:flex-row">
-                            <div class="md:w-1/2 h-64 md:h-auto relative overflow-hidden">
-                                <img
-                                    src="assets/img/blog-couts-construction.jpeg"
-                                    alt="Coût de construction à Douala en 2026"
-                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                    width="800" height="600"
-                                />
-                                <span class="absolute top-4 left-4 bg-primary/80 backdrop-blur-md text-vert-energie px-3 py-1 rounded text-xs font-bold">Coûts & budget</span>
-                            </div>
-                            <div class="md:w-1/2 p-8 flex flex-col justify-center">
-                                <span class="font-body-sm text-on-surface-variant mb-3 block">15 Janvier 2024 · 8 min de lecture</span>
-                                <h2 class="font-headline-sm text-headline-sm text-anthracite mb-4">
-                                    Combien coûte réellement la construction d'une maison à Douala en 2026 ?
-                                </h2>
-                                <p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3">
-                                    Anticipez vos projets immobiliers grâce à notre analyse détaillée du marché de la construction à Douala. Prix des matériaux, main d'œuvre qualifiée et taxes foncières…
-                                </p>
-                                <span class="text-anthracite font-bold flex items-center gap-2 group-hover:text-vert-croissance transition-colors">
-                                    Lire l'article
-                                    <i data-lucide="arrow-right" class="group-hover:translate-x-1 transition-transform"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </a>
-                </section>
-
-
-                <!-- FILTRES PAR CATÉGORIE -->
-                <section class="mb-6 overflow-x-auto" aria-label="Filtres par catégorie">
-                    <div class="flex items-center gap-3 pb-2 whitespace-nowrap" id="filter-container">
-                        <button class="filter-btn active-filter border border-transparent px-5 py-2 rounded-full font-label-md text-sm font-bold transition-all" onclick="filterArticles('all')">Tous</button>
-                        <button class="filter-btn bg-white border border-border-gray hover:border-vert-energie px-5 py-2 rounded-full font-label-md text-sm transition-all" onclick="filterArticles('Coûts & budget')">Coûts & budget</button>
-                        <button class="filter-btn bg-white border border-border-gray hover:border-vert-energie px-5 py-2 rounded-full font-label-md text-sm transition-all" onclick="filterArticles('Construction')">Construction</button>
-                        <button class="filter-btn bg-white border border-border-gray hover:border-vert-energie px-5 py-2 rounded-full font-label-md text-sm transition-all" onclick="filterArticles('Toiture')">Toiture</button>
-                        <button class="filter-btn bg-white border border-border-gray hover:border-vert-energie px-5 py-2 rounded-full font-label-md text-sm transition-all" onclick="filterArticles('Rénovation')">Rénovation</button>
-                        <button class="filter-btn bg-white border border-border-gray hover:border-vert-energie px-5 py-2 rounded-full font-label-md text-sm transition-all" onclick="filterArticles('Conseils techniques')">Conseils techniques</button>
-                    </div>
-                </section>
-
-
-                <!-- GRILLE D'ARTICLES -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter" id="article-grid">
-
-                    <!-- Article 1 -->
-                    <article class="article-card group bg-white border border-border-gray rounded-2xl overflow-hidden hover:shadow-md transition-all" data-category="Coûts & budget">
-                        <a href="article-couts-construction.html">
-                            <div class="h-48 overflow-hidden relative">
-                                <img
-                                    src="assets/img/blog-couts-construction.jpeg"
-                                    alt="Prix construction Douala 2026"
-                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                                    loading="lazy" decoding="async" width="800" height="600"
-                                />
-                                <span class="absolute top-4 left-4 bg-primary/80 backdrop-blur-md text-vert-energie px-3 py-1 rounded text-xs font-bold">Coûts & budget</span>
-                            </div>
-                            <div class="p-6">
-                                <h3 class="font-headline-sm text-headline-sm mb-2 group-hover:text-vert-croissance transition-colors">Prix construction Douala 2026</h3>
-                                <p class="text-on-surface-variant text-body-sm line-clamp-2">L'évolution des prix de l'immobilier et des matériaux au Cameroun.</p>
-                                <span class="mt-4 flex items-center gap-1 text-sm font-semibold text-anthracite group-hover:text-vert-croissance transition-colors">
-                                    Lire l'article <i data-lucide="arrow-right" class="text-[18px] group-hover:translate-x-1 transition-transform"></i>
-                                </span>
-                            </div>
-                        </a>
-                    </article>
-
-                    <!-- Article 2 -->
-                    <article class="article-card group bg-white border border-border-gray rounded-2xl overflow-hidden hover:shadow-md transition-all" data-category="Toiture">
-                        <a href="article-couts-construction.html">
-                            <div class="h-48 overflow-hidden relative">
-                                <img
-                                    src="assets/img/blog-tole-tuile.jpeg"
-                                    alt="Tôle imitation tuile vs bac acier"
-                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                                    loading="lazy" decoding="async" width="800" height="600"
-                                />
-                                <span class="absolute top-4 left-4 bg-primary/80 backdrop-blur-md text-vert-energie px-3 py-1 rounded text-xs font-bold">Toiture</span>
-                            </div>
-                            <div class="p-6">
-                                <h3 class="font-headline-sm text-headline-sm mb-2 group-hover:text-vert-croissance transition-colors">Tôle imitation tuile vs Bac acier</h3>
-                                <p class="text-on-surface-variant text-body-sm line-clamp-2">Comment choisir votre couverture pour un climat tropical ?</p>
-                                <span class="mt-4 flex items-center gap-1 text-sm font-semibold text-anthracite group-hover:text-vert-croissance transition-colors">
-                                    Lire l'article <i data-lucide="arrow-right" class="text-[18px] group-hover:translate-x-1 transition-transform"></i>
-                                </span>
-                            </div>
-                        </a>
-                    </article>
-
-                    <!-- Article 3 -->
-                    <article class="article-card group bg-white border border-border-gray rounded-2xl overflow-hidden hover:shadow-md transition-all" data-category="Conseils techniques">
-                        <a href="article-couts-construction.html">
-                            <div class="h-48 overflow-hidden relative">
-                                <img
-                                    src="assets/img/blog-erreurs-construction.jpeg"
-                                    alt="5 erreurs de gros œuvre au Cameroun"
-                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                                    loading="lazy" decoding="async" width="800" height="600"
-                                />
-                                <span class="absolute top-4 left-4 bg-primary/80 backdrop-blur-md text-vert-energie px-3 py-1 rounded text-xs font-bold">Conseils techniques</span>
-                            </div>
-                            <div class="p-6">
-                                <h3 class="font-headline-sm text-headline-sm mb-2 group-hover:text-vert-croissance transition-colors">5 erreurs de gros œuvre</h3>
-                                <p class="text-on-surface-variant text-body-sm line-clamp-2">Les fautes classiques à éviter sur les chantiers au Cameroun.</p>
-                                <span class="mt-4 flex items-center gap-1 text-sm font-semibold text-anthracite group-hover:text-vert-croissance transition-colors">
-                                    Lire l'article <i data-lucide="arrow-right" class="text-[18px] group-hover:translate-x-1 transition-transform"></i>
-                                </span>
-                            </div>
-                        </a>
-                    </article>
-
-                    <!-- Article 4 -->
-                    <article class="article-card group bg-white border border-border-gray rounded-2xl overflow-hidden hover:shadow-md transition-all" data-category="Rénovation">
-                        <a href="article-couts-construction.html">
-                            <div class="h-48 overflow-hidden relative">
-                                <img
-                                    src="assets/img/blog-refection-batiment.jpeg"
-                                    alt="Réfection de bâtiment à Douala"
-                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                                    loading="lazy" decoding="async" width="800" height="600"
-                                />
-                                <span class="absolute top-4 left-4 bg-primary/80 backdrop-blur-md text-vert-energie px-3 py-1 rounded text-xs font-bold">Rénovation</span>
-                            </div>
-                            <div class="p-6">
-                                <h3 class="font-headline-sm text-headline-sm mb-2 group-hover:text-vert-croissance transition-colors">Réfection de bâtiment à Douala</h3>
-                                <p class="text-on-surface-variant text-body-sm line-clamp-2">Valoriser votre patrimoine immobilier par la rénovation.</p>
-                                <span class="mt-4 flex items-center gap-1 text-sm font-semibold text-anthracite group-hover:text-vert-croissance transition-colors">
-                                    Lire l'article <i data-lucide="arrow-right" class="text-[18px] group-hover:translate-x-1 transition-transform"></i>
-                                </span>
-                            </div>
-                        </a>
-                    </article>
-
-                    <!-- Article 5 -->
-                    <article class="article-card group bg-white border border-border-gray rounded-2xl overflow-hidden hover:shadow-md transition-all" data-category="Construction">
-                        <a href="article-couts-construction.html">
-                            <div class="h-48 overflow-hidden relative">
-                                <img
-                                    src="assets/img/service-gros-oeuvre.jpeg"
-                                    alt="Calcul structurel pour immeuble"
-                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                                    loading="lazy" decoding="async" width="800" height="600"
-                                />
-                                <span class="absolute top-4 left-4 bg-primary/80 backdrop-blur-md text-vert-energie px-3 py-1 rounded text-xs font-bold">Construction</span>
-                            </div>
-                            <div class="p-6">
-                                <h3 class="font-headline-sm text-headline-sm mb-2 group-hover:text-vert-croissance transition-colors">Calcul structurel pour immeuble</h3>
-                                <p class="text-on-surface-variant text-body-sm line-clamp-2">Sécurité et durabilité des constructions en hauteur.</p>
-                                <span class="mt-4 flex items-center gap-1 text-sm font-semibold text-anthracite group-hover:text-vert-croissance transition-colors">
-                                    Lire l'article <i data-lucide="arrow-right" class="text-[18px] group-hover:translate-x-1 transition-transform"></i>
-                                </span>
-                            </div>
-                        </a>
-                    </article>
-
-                    <!-- Article 6 -->
-                    <article class="article-card group bg-white border border-border-gray rounded-2xl overflow-hidden hover:shadow-md transition-all" data-category="Toiture">
-                        <a href="article-couts-construction.html">
-                            <div class="h-48 overflow-hidden relative">
-                                <img
-                                    src="assets/img/service-charpente.jpeg"
-                                    alt="Charpente bois ou métallique"
-                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                                    loading="lazy" decoding="async" width="800" height="600"
-                                />
-                                <span class="absolute top-4 left-4 bg-primary/80 backdrop-blur-md text-vert-energie px-3 py-1 rounded text-xs font-bold">Toiture</span>
-                            </div>
-                            <div class="p-6">
-                                <h3 class="font-headline-sm text-headline-sm mb-2 group-hover:text-vert-croissance transition-colors">Charpente bois ou métallique ?</h3>
-                                <p class="text-on-surface-variant text-body-sm line-clamp-2">Laquelle choisir pour résister à l'humidité tropicale ?</p>
-                                <span class="mt-4 flex items-center gap-1 text-sm font-semibold text-anthracite group-hover:text-vert-croissance transition-colors">
-                                    Lire l'article <i data-lucide="arrow-right" class="text-[18px] group-hover:translate-x-1 transition-transform"></i>
-                                </span>
-                            </div>
-                        </a>
-                    </article>
-
-                </div>
-
-
-                <!-- PAGINATION -->
-                <div class="flex items-center justify-center gap-3 mt-2xl pb-xl">
-                    <button class="w-10 h-10 flex items-center justify-center rounded-lg border border-border-gray opacity-40 cursor-not-allowed" disabled aria-label="Page précédente">
-                        <i data-lucide="chevron-left"></i>
-                    </button>
-                    <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-vert-energie text-anthracite font-bold" aria-current="page">1</button>
-                    <button class="w-10 h-10 flex items-center justify-center rounded-lg border border-border-gray hover:border-vert-energie hover:text-vert-croissance transition-all">2</button>
-                    <button class="w-10 h-10 flex items-center justify-center rounded-lg border border-border-gray hover:border-vert-energie hover:text-vert-croissance transition-all" aria-label="Page suivante">
-                        <i data-lucide="chevron-right"></i>
-                    </button>
-                </div>
-
-            </div>
-
-
-            <!-- SIDEBAR -->
-            <aside class="lg:col-span-4 space-y-xl">
-
-                <!-- CTA encart expert -->
-                <div class="bg-anthracite p-8 rounded-2xl text-white">
-                    <div class="flex items-center justify-center w-12 h-12 bg-vert-energie rounded-full mb-4">
-                        <i data-lucide="hard-hat" class="text-anthracite text-[28px]"></i>
-                    </div>
-                    <h4 class="font-headline-sm text-headline-sm mb-3">Besoin d'un avis technique ?</h4>
-                    <p class="text-on-primary-container mb-6 text-body-sm">Nos ingénieurs sont à votre écoute pour analyser vos plans et optimiser vos coûts de construction.</p>
-                    <a href="contact.html" class="block w-full text-center bg-vert-energie text-anthracite py-3 rounded-lg font-bold hover:bg-vert-croissance hover:text-white transition-all active:scale-95">
-                        Demander un devis
-                    </a>
-                </div>
-
-                <!-- Catégories -->
-                <div class="bg-white p-8 rounded-2xl border border-border-gray">
-                    <h4 class="font-headline-sm text-headline-sm mb-6 text-anthracite">Catégories</h4>
-                    <ul class="space-y-4">
-                        <li class="flex items-center justify-between group cursor-pointer" onclick="filterArticles('Coûts & budget')">
-                            <span class="text-on-surface-variant group-hover:text-vert-croissance transition-colors">Coûts & budget</span>
-                            <span class="bg-surface text-anthracite px-2 py-0.5 rounded font-bold text-xs">12</span>
-                        </li>
-                        <li class="flex items-center justify-between group cursor-pointer" onclick="filterArticles('Construction')">
-                            <span class="text-on-surface-variant group-hover:text-vert-croissance transition-colors">Construction</span>
-                            <span class="bg-surface text-anthracite px-2 py-0.5 rounded font-bold text-xs">24</span>
-                        </li>
-                        <li class="flex items-center justify-between group cursor-pointer" onclick="filterArticles('Toiture')">
-                            <span class="text-on-surface-variant group-hover:text-vert-croissance transition-colors">Toiture</span>
-                            <span class="bg-surface text-anthracite px-2 py-0.5 rounded font-bold text-xs">8</span>
-                        </li>
-                        <li class="flex items-center justify-between group cursor-pointer" onclick="filterArticles('Rénovation')">
-                            <span class="text-on-surface-variant group-hover:text-vert-croissance transition-colors">Rénovation</span>
-                            <span class="bg-surface text-anthracite px-2 py-0.5 rounded font-bold text-xs">15</span>
-                        </li>
-                        <li class="flex items-center justify-between group cursor-pointer" onclick="filterArticles('Conseils techniques')">
-                            <span class="text-on-surface-variant group-hover:text-vert-croissance transition-colors">Conseils techniques</span>
-                            <span class="bg-surface text-anthracite px-2 py-0.5 rounded font-bold text-xs">19</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Newsletter -->
-                <div class="bg-surface p-8 rounded-2xl border border-border-gray">
-                    <h4 class="font-headline-sm text-headline-sm mb-2 text-anthracite">Restez informé</h4>
-                    <p class="text-on-surface-variant text-body-sm mb-4">Recevez nos derniers conseils directement dans votre boîte mail.</p>
-                    <div class="flex flex-col gap-3">
-                        <input
-                            type="email"
-                            placeholder="votre@email.com"
-                            class="w-full bg-white border border-border-gray rounded-lg px-4 py-3 focus:ring-2 focus:ring-vert-energie outline-none text-body-sm"
-                        />
-                        <button class="bg-anthracite text-white py-3 rounded-lg font-bold hover:bg-vert-croissance transition-all">
-                            S'abonner
-                        </button>
-                    </div>
-                </div>
-
-            </aside>
-
-        </div>
-
-
-        <!-- CTA FINAL -->
-        <section class="mt-2xl py-2xl bg-surface">
-            <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
-                <div class="signature-gradient rounded-[40px] p-10 md:p-20 text-center text-anthracite reveal">
-                    <h2 class="font-headline-xl-mobile md:font-headline-lg text-headline-xl-mobile md:text-headline-lg mb-6">
-                        Un projet de construction ou de rénovation ? Parlons-en.
-                    </h2>
-                    <div class="flex flex-col md:flex-row items-center justify-center gap-4">
-                        <a href="contact.html" class="bg-anthracite text-white font-bold px-10 py-5 rounded-2xl hover:scale-105 transition-transform shadow-2xl">
-                            Démarrer une consultation
-                        </a>
-                        <a href="https://wa.me/237652321897" class="bg-[#25D366] text-white font-bold px-10 py-5 rounded-2xl hover:scale-105 transition-transform flex items-center justify-center gap-3 shadow-lg">
-                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                                <use href="assets/img/icons.svg#icon-whatsapp"/>
-                            </svg>
-                            WhatsApp Direct
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-
-    <!-- PIED DE PAGE identique à l'accueil -->
-    <footer class="bg-primary text-on-primary pt-2xl pb-12 overflow-hidden">
-        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
-
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-2xl">
-
-                <div class="col-span-1 md:col-span-2">
-                    <span class="font-headline-lg text-vert-energie mb-6 block">Bosco Construction Group SARL</span>
-                    <p class="text-on-primary-container font-body-md max-w-sm mb-8">
-                        Building Structural Vitality. Experts en génie civil et construction durable au cœur du Cameroun depuis plus de 10 ans.
-                    </p>
-                    <div class="flex gap-4">
-                        <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-vert-energie transition-colors">
-                            <i data-lucide="facebook" class="text-white"></i>
-                        </a>
-                        <a href="#" aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-vert-energie transition-colors">
-                            <i data-lucide="linkedin" class="text-white"></i>
-                        </a>
-                        <a href="mailto:contact@bosco-group.cm" aria-label="E-mail" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-vert-energie transition-colors">
-                            <i data-lucide="at-sign" class="text-white"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div>
-                    <h4 class="font-bold uppercase tracking-widest text-sm text-vert-energie mb-6">Contact & Accès</h4>
-                    <ul class="space-y-4 text-on-primary-container text-body-sm">
-                        <li class="flex gap-3">
-                            <i data-lucide="map-pin" class="text-vert-energie flex-shrink-0"></i>
-                            <span>Galerie de Flore, Akwa,<br/>BP 1254, Douala, Cameroun</span>
-                        </li>
-                        <li class="flex gap-3">
-                            <i data-lucide="smartphone" class="text-vert-energie flex-shrink-0"></i>
-                            <a href="tel:+237652321897" class="hover:text-vert-energie transition-colors">+237 652 321 897</a>
-                        </li>
-                        <li class="flex gap-3">
-                            <i data-lucide="clock" class="text-vert-energie flex-shrink-0"></i>
-                            <span>Lun – Ven : 08h00 – 18h00<br/>Samedi : 09h00 – 13h00</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-bold uppercase tracking-widest text-sm text-vert-energie mb-6">Navigation</h4>
-                    <ul class="space-y-3 text-on-primary-container text-body-sm">
-                        <li><a href="services.html"     class="hover:text-white transition-colors">Gros Œuvre & Terrassement</a></li>
-                        <li><a href="services.html"     class="hover:text-white transition-colors">Charpente & Menuiserie</a></li>
-                        <li><a href="realisations.html" class="hover:text-white transition-colors">Portfolio de Réalisations</a></li>
-                        <li><a href="a-propos.html"     class="hover:text-white transition-colors">À propos</a></li>
-                        <li><a href="contact.html"      class="hover:text-white transition-colors">Demander un devis</a></li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="pt-8 border-t border-on-primary-container/20 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-on-primary-container">
-                <p>© 2026 Bosco Construction Group SARL. Building Structural Vitality.</p>
-                <div class="flex gap-6">
-                    <a href="#" class="hover:text-vert-energie transition-colors">Mentions légales</a>
-                    <a href="contact.html" class="hover:text-vert-energie transition-colors">Contact</a>
-                </div>
-            </div>
-
-        </div>
-    </footer>
-
-
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script src="assets/js/main.js"></script>
-
-    <script>
-        function filterArticles(category) {
-            const cards = document.querySelectorAll('.article-card');
-            const btns  = document.querySelectorAll('.filter-btn');
-
-            btns.forEach(btn => {
-                const label = btn.textContent.trim();
-                const isActive = (category === 'all' && label === 'Tous') || label === category;
-                btn.classList.toggle('active-filter', isActive);
-                btn.classList.toggle('bg-white', !isActive);
-                btn.classList.toggle('border-border-gray', !isActive);
-                btn.style.color = isActive ? '' : '';
-            });
-
-            cards.forEach(card => {
-                const match = category === 'all' || card.dataset.category === category;
-                if (match) {
-                    card.style.display = 'block';
-                    card.style.opacity = '0';
-                    setTimeout(() => { card.style.transition = 'opacity 0.3s'; card.style.opacity = '1'; }, 30);
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-    </script>
-
+  <script src="assets/js/global.js"></script>
 </body>
 </html>
+
+
+
+
