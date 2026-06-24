@@ -7,6 +7,41 @@
   'use strict';
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ---- 0. Page loader ----------------------------------------------------- */
+  const loader = document.createElement('div');
+  loader.id = 'pageLoader';
+  loader.setAttribute('aria-hidden', 'true');
+  loader.innerHTML =
+    '<div class="loader-inner">' +
+      '<img src="assets/images/logo.png" alt="" class="loader-logo" />' +
+      '<div class="loader-track"><div class="loader-fill"></div></div>' +
+    '</div>';
+  document.body.prepend(loader);
+
+  const hideLoader = () => loader.classList.add('done');
+  if (document.readyState === 'complete') {
+    setTimeout(hideLoader, reduceMotion ? 0 : 500);
+  } else {
+    window.addEventListener('load', () => setTimeout(hideLoader, reduceMotion ? 0 : 500));
+  }
+
+  /* ---- 0b. Barre de progression au scroll --------------------------------- */
+  if (!document.getElementById('progress')) {
+    const sp = document.createElement('div');
+    sp.id = 'scrollProgress';
+    sp.setAttribute('aria-hidden', 'true');
+    document.body.prepend(sp);
+
+    const updateScroll = () => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = total > 0 ? window.scrollY / total : 0;
+      sp.style.transform = 'scaleX(' + Math.min(Math.max(ratio, 0), 1) + ')';
+    };
+    updateScroll();
+    window.addEventListener('scroll', updateScroll, { passive: true });
+    window.addEventListener('resize', updateScroll);
+  }
+
   /* ---- 1. Header : état au scroll ---------------------------------------- */
   const header = document.getElementById('header');
   if (header) {
